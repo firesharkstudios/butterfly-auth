@@ -1,0 +1,203 @@
+### YamlMime:ManagedReference
+items:
+- uid: Butterfly.Auth.AuthToken
+  commentId: T:Butterfly.Auth.AuthToken
+  id: AuthToken
+  parent: Butterfly.Auth
+  children:
+  - Butterfly.Auth.AuthToken.#ctor(System.String,System.String,System.String)
+  - Butterfly.Auth.AuthToken.accountId
+  - Butterfly.Auth.AuthToken.role
+  - Butterfly.Auth.AuthToken.type
+  langs:
+  - csharp
+  - vb
+  name: AuthToken
+  nameWithType: AuthToken
+  fullName: Butterfly.Auth.AuthToken
+  type: Class
+  source:
+    remote:
+      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+    id: AuthToken
+    path: ../Butterfly.Auth/AuthManager.cs
+    startLine: 750
+  assemblies:
+  - Butterfly.Auth
+  namespace: Butterfly.Auth
+  summary: "\nRepresents the result of a successful <xref href=\"Butterfly.Auth.AuthManager.LoginAsync(System.Collections.Generic.Dictionary%7bSystem.String%2cSystem.Object%7d)\" data-throw-if-not-resolved=\"false\"></xref> or <xref href=\"Butterfly.Auth.AuthManager.RegisterAsync(System.Object%2cSystem.Collections.Generic.Dictionary%7bSystem.String%2cSystem.Object%7d)\" data-throw-if-not-resolved=\"false\"></xref>\n"
+  example: []
+  syntax:
+    content: 'public abstract class AuthToken : object'
+    content.vb: >-
+      Public MustInherit Class AuthToken
+          Inherits Object
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - Butterfly.Auth.ShareCodeToken
+  - Butterfly.Auth.UserRefToken
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: Butterfly.Auth.AuthToken.type
+  commentId: F:Butterfly.Auth.AuthToken.type
+  id: type
+  parent: Butterfly.Auth.AuthToken
+  langs:
+  - csharp
+  - vb
+  name: type
+  nameWithType: AuthToken.type
+  fullName: Butterfly.Auth.AuthToken.type
+  type: Field
+  source:
+    remote:
+      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+    id: type
+    path: ../Butterfly.Auth/AuthManager.cs
+    startLine: 751
+  assemblies:
+  - Butterfly.Auth
+  namespace: Butterfly.Auth
+  syntax:
+    content: public readonly string type
+    return:
+      type: System.String
+    content.vb: Public ReadOnly type As String
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Butterfly.Auth.AuthToken.accountId
+  commentId: F:Butterfly.Auth.AuthToken.accountId
+  id: accountId
+  parent: Butterfly.Auth.AuthToken
+  langs:
+  - csharp
+  - vb
+  name: accountId
+  nameWithType: AuthToken.accountId
+  fullName: Butterfly.Auth.AuthToken.accountId
+  type: Field
+  source:
+    remote:
+      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+    id: accountId
+    path: ../Butterfly.Auth/AuthManager.cs
+    startLine: 752
+  assemblies:
+  - Butterfly.Auth
+  namespace: Butterfly.Auth
+  syntax:
+    content: public readonly string accountId
+    return:
+      type: System.String
+    content.vb: Public ReadOnly accountId As String
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Butterfly.Auth.AuthToken.role
+  commentId: F:Butterfly.Auth.AuthToken.role
+  id: role
+  parent: Butterfly.Auth.AuthToken
+  langs:
+  - csharp
+  - vb
+  name: role
+  nameWithType: AuthToken.role
+  fullName: Butterfly.Auth.AuthToken.role
+  type: Field
+  source:
+    remote:
+      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+    id: role
+    path: ../Butterfly.Auth/AuthManager.cs
+    startLine: 753
+  assemblies:
+  - Butterfly.Auth
+  namespace: Butterfly.Auth
+  syntax:
+    content: public readonly string role
+    return:
+      type: System.String
+    content.vb: Public ReadOnly role As String
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Butterfly.Auth.AuthToken.#ctor(System.String,System.String,System.String)
+  commentId: M:Butterfly.Auth.AuthToken.#ctor(System.String,System.String,System.String)
+  id: '#ctor(System.String,System.String,System.String)'
+  parent: Butterfly.Auth.AuthToken
+  langs:
+  - csharp
+  - vb
+  name: AuthToken(String, String, String)
+  nameWithType: AuthToken.AuthToken(String, String, String)
+  fullName: Butterfly.Auth.AuthToken.AuthToken(System.String, System.String, System.String)
+  type: Constructor
+  source:
+    remote:
+      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+    id: .ctor
+    path: ../Butterfly.Auth/AuthManager.cs
+    startLine: 755
+  assemblies:
+  - Butterfly.Auth
+  namespace: Butterfly.Auth
+  syntax:
+    content: public AuthToken(string type, string accountId, string role)
+    parameters:
+    - id: type
+      type: System.String
+    - id: accountId
+      type: System.String
+    - id: role
+      type: System.String
+    content.vb: Public Sub New(type As String, accountId As String, role As String)
+  overload: Butterfly.Auth.AuthToken.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: Butterfly.Auth.AuthManager.LoginAsync(System.Collections.Generic.Dictionary{System.String,System.Object})
+  commentId: M:Butterfly.Auth.AuthManager.LoginAsync(System.Collections.Generic.Dictionary{System.String,System.Object})
+  isExternal: true
+- uid: Butterfly.Auth.AuthManager.RegisterAsync(System.Object,System.Collections.Generic.Dictionary{System.String,System.Object})
+  commentId: M:Butterfly.Auth.AuthManager.RegisterAsync(System.Object,System.Collections.Generic.Dictionary{System.String,System.Object})
+  isExternal: true
+- uid: Butterfly.Auth
+  commentId: N:Butterfly.Auth
+  name: Butterfly.Auth
+  nameWithType: Butterfly.Auth
+  fullName: Butterfly.Auth
+- uid: System.Object
+  commentId: T:System.Object
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Butterfly.Auth.AuthToken.#ctor*
+  commentId: Overload:Butterfly.Auth.AuthToken.#ctor
+  name: AuthToken
+  nameWithType: AuthToken.AuthToken
+  fullName: Butterfly.Auth.AuthToken.AuthToken
+shouldSkipMarkup: true

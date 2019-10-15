@@ -1,0 +1,242 @@
+{
+  "homepages": [],
+  "source_base_path": "C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/docfx_project",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Butterfly.Auth.AuthManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Butterfly.Auth.AuthManager.html",
+          "hash": "16L8DcCktRprFcalQdMg/A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Butterfly.Auth.AuthToken.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Butterfly.Auth.AuthToken.html",
+          "hash": "i4XQoUrBBcBqF+gO80ngnw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Butterfly.Auth.IAuthenticator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Butterfly.Auth.IAuthenticator.html",
+          "hash": "cJUr0TIVd+9Z9GMbSJK/5A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Butterfly.Auth.ShareCodeAuthenticator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Butterfly.Auth.ShareCodeAuthenticator.html",
+          "hash": "g2ZNFQrrJZQSGuzI7oooFw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Butterfly.Auth.ShareCodeToken.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Butterfly.Auth.ShareCodeToken.html",
+          "hash": "6U0hPUvWdK3FLY9bjIsu0w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Butterfly.Auth.UserRefToken.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Butterfly.Auth.UserRefToken.html",
+          "hash": "w3JhB3N+BA0eIZsSEEmQ8g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Butterfly.Auth.UserRefTokenAuthenticator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Butterfly.Auth.UserRefTokenAuthenticator.html",
+          "hash": "IXMh8+b0rfiR2rX5xsc9kA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Butterfly.Auth.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Butterfly.Auth.html",
+          "hash": "+uqcZgfVcF5RD9umcbEPRg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Butterfly.Core.Test.AuthTest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Butterfly.Core.Test.AuthTest.html",
+          "hash": "3FRK8CaKtcUdU0zjdg73kw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Butterfly.Core.Test.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Butterfly.Core.Test.html",
+          "hash": "qOCmWLETqkaaRY+5TT1Hcg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "LO3XnDWiEpYKNfOjJrosmA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "Z+4a2GJiszJhIeb1w5vsvg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/logo-48x48.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/logo-48x48.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "VMsjYFKFzK65cPeOh9XIJQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "J6i4D7C3ocprKq0ee27m9A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot build incrementally because docfx version changed from 2.38.1.0 to 2.46.0.0.",
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0,
+        "full_build_reason_code": "DocfxVersionChanged"
+      },
+      "processors": {
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 2,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 10,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": true,
+        "details": "Can support incremental post processing.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

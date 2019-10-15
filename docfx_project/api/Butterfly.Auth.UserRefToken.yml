@@ -1,0 +1,441 @@
+### YamlMime:ManagedReference
+items:
+- uid: Butterfly.Auth.UserRefToken
+  commentId: T:Butterfly.Auth.UserRefToken
+  id: UserRefToken
+  parent: Butterfly.Auth
+  children:
+  - Butterfly.Auth.UserRefToken.#ctor(System.String,System.String,System.String,System.String,System.String,DateTime)
+  - Butterfly.Auth.UserRefToken.expiresAt
+  - Butterfly.Auth.UserRefToken.FromDict(System.Collections.Generic.Dictionary{System.String,System.Object},System.String,System.String,System.String,System.String,System.String,System.String)
+  - Butterfly.Auth.UserRefToken.id
+  - Butterfly.Auth.UserRefToken.userId
+  - Butterfly.Auth.UserRefToken.username
+  langs:
+  - csharp
+  - vb
+  name: UserRefToken
+  nameWithType: UserRefToken
+  fullName: Butterfly.Auth.UserRefToken
+  type: Class
+  source:
+    remote:
+      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/UserRefTokenAuthenticator.cs
+    id: UserRefToken
+    path: ../Butterfly.Auth/UserRefTokenAuthenticator.cs
+    startLine: 101
+  assemblies:
+  - Butterfly.Auth
+  namespace: Butterfly.Auth
+  summary: "\nRepresents the result of a successful <xref href=\"Butterfly.Auth.AuthManager.LoginAsync(System.Collections.Generic.Dictionary%7bSystem.String%2cSystem.Object%7d)\" data-throw-if-not-resolved=\"false\"></xref> or <xref href=\"Butterfly.Auth.AuthManager.RegisterAsync(System.Object%2cSystem.Collections.Generic.Dictionary%7bSystem.String%2cSystem.Object%7d)\" data-throw-if-not-resolved=\"false\"></xref>\n"
+  example: []
+  syntax:
+    content: 'public class UserRefToken : AuthToken'
+    content.vb: >-
+      Public Class UserRefToken
+          Inherits AuthToken
+  inheritance:
+  - System.Object
+  - Butterfly.Auth.AuthToken
+  inheritedMembers:
+  - Butterfly.Auth.AuthToken.type
+  - Butterfly.Auth.AuthToken.accountId
+  - Butterfly.Auth.AuthToken.role
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: Butterfly.Auth.UserRefToken.id
+  commentId: F:Butterfly.Auth.UserRefToken.id
+  id: id
+  parent: Butterfly.Auth.UserRefToken
+  langs:
+  - csharp
+  - vb
+  name: id
+  nameWithType: UserRefToken.id
+  fullName: Butterfly.Auth.UserRefToken.id
+  type: Field
+  source:
+    remote:
+      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/UserRefTokenAuthenticator.cs
+    id: id
+    path: ../Butterfly.Auth/UserRefTokenAuthenticator.cs
+    startLine: 102
+  assemblies:
+  - Butterfly.Auth
+  namespace: Butterfly.Auth
+  syntax:
+    content: public readonly string id
+    return:
+      type: System.String
+    content.vb: Public ReadOnly id As String
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Butterfly.Auth.UserRefToken.userId
+  commentId: F:Butterfly.Auth.UserRefToken.userId
+  id: userId
+  parent: Butterfly.Auth.UserRefToken
+  langs:
+  - csharp
+  - vb
+  name: userId
+  nameWithType: UserRefToken.userId
+  fullName: Butterfly.Auth.UserRefToken.userId
+  type: Field
+  source:
+    remote:
+      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/UserRefTokenAuthenticator.cs
+    id: userId
+    path: ../Butterfly.Auth/UserRefTokenAuthenticator.cs
+    startLine: 103
+  assemblies:
+  - Butterfly.Auth
+  namespace: Butterfly.Auth
+  syntax:
+    content: public readonly string userId
+    return:
+      type: System.String
+    content.vb: Public ReadOnly userId As String
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Butterfly.Auth.UserRefToken.username
+  commentId: F:Butterfly.Auth.UserRefToken.username
+  id: username
+  parent: Butterfly.Auth.UserRefToken
+  langs:
+  - csharp
+  - vb
+  name: username
+  nameWithType: UserRefToken.username
+  fullName: Butterfly.Auth.UserRefToken.username
+  type: Field
+  source:
+    remote:
+      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/UserRefTokenAuthenticator.cs
+    id: username
+    path: ../Butterfly.Auth/UserRefTokenAuthenticator.cs
+    startLine: 104
+  assemblies:
+  - Butterfly.Auth
+  namespace: Butterfly.Auth
+  syntax:
+    content: public readonly string username
+    return:
+      type: System.String
+    content.vb: Public ReadOnly username As String
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Butterfly.Auth.UserRefToken.expiresAt
+  commentId: F:Butterfly.Auth.UserRefToken.expiresAt
+  id: expiresAt
+  parent: Butterfly.Auth.UserRefToken
+  langs:
+  - csharp
+  - vb
+  name: expiresAt
+  nameWithType: UserRefToken.expiresAt
+  fullName: Butterfly.Auth.UserRefToken.expiresAt
+  type: Field
+  source:
+    remote:
+      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/UserRefTokenAuthenticator.cs
+    id: expiresAt
+    path: ../Butterfly.Auth/UserRefTokenAuthenticator.cs
+    startLine: 105
+  assemblies:
+  - Butterfly.Auth
+  namespace: Butterfly.Auth
+  syntax:
+    content: public readonly DateTime expiresAt
+    return:
+      type: DateTime
+    content.vb: Public ReadOnly expiresAt As DateTime
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Butterfly.Auth.UserRefToken.#ctor(System.String,System.String,System.String,System.String,System.String,DateTime)
+  commentId: M:Butterfly.Auth.UserRefToken.#ctor(System.String,System.String,System.String,System.String,System.String,DateTime)
+  id: '#ctor(System.String,System.String,System.String,System.String,System.String,DateTime)'
+  parent: Butterfly.Auth.UserRefToken
+  langs:
+  - csharp
+  - vb
+  name: UserRefToken(String, String, String, String, String, DateTime)
+  nameWithType: UserRefToken.UserRefToken(String, String, String, String, String, DateTime)
+  fullName: Butterfly.Auth.UserRefToken.UserRefToken(System.String, System.String, System.String, System.String, System.String, DateTime)
+  type: Constructor
+  source:
+    remote:
+      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/UserRefTokenAuthenticator.cs
+    id: .ctor
+    path: ../Butterfly.Auth/UserRefTokenAuthenticator.cs
+    startLine: 107
+  assemblies:
+  - Butterfly.Auth
+  namespace: Butterfly.Auth
+  syntax:
+    content: public UserRefToken(string id, string userId, string username, string role, string accountId, DateTime expiresAt)
+    parameters:
+    - id: id
+      type: System.String
+    - id: userId
+      type: System.String
+    - id: username
+      type: System.String
+    - id: role
+      type: System.String
+    - id: accountId
+      type: System.String
+    - id: expiresAt
+      type: DateTime
+    content.vb: Public Sub New(id As String, userId As String, username As String, role As String, accountId As String, expiresAt As DateTime)
+  overload: Butterfly.Auth.UserRefToken.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Butterfly.Auth.UserRefToken.FromDict(System.Collections.Generic.Dictionary{System.String,System.Object},System.String,System.String,System.String,System.String,System.String,System.String)
+  commentId: M:Butterfly.Auth.UserRefToken.FromDict(System.Collections.Generic.Dictionary{System.String,System.Object},System.String,System.String,System.String,System.String,System.String,System.String)
+  id: FromDict(System.Collections.Generic.Dictionary{System.String,System.Object},System.String,System.String,System.String,System.String,System.String,System.String)
+  parent: Butterfly.Auth.UserRefToken
+  langs:
+  - csharp
+  - vb
+  name: FromDict(System.Collections.Generic.Dictionary<String, Object>, String, String, String, String, String, String)
+  nameWithType: UserRefToken.FromDict(System.Collections.Generic.Dictionary<String, Object>, String, String, String, String, String, String)
+  fullName: Butterfly.Auth.UserRefToken.FromDict(System.Collections.Generic.Dictionary<System.String, System.Object>, System.String, System.String, System.String, System.String, System.String, System.String)
+  type: Method
+  source:
+    remote:
+      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/UserRefTokenAuthenticator.cs
+    id: FromDict
+    path: ../Butterfly.Auth/UserRefTokenAuthenticator.cs
+    startLine: 114
+  assemblies:
+  - Butterfly.Auth
+  namespace: Butterfly.Auth
+  syntax:
+    content: public static UserRefToken FromDict(System.Collections.Generic.Dictionary<string, object> dict, string idFieldName, string userIdFieldName, string usernameFieldName, string roleFieldName, string accountIdFieldName, string expiresAtFieldName)
+    parameters:
+    - id: dict
+      type: System.Collections.Generic.Dictionary{System.String,System.Object}
+    - id: idFieldName
+      type: System.String
+    - id: userIdFieldName
+      type: System.String
+    - id: usernameFieldName
+      type: System.String
+    - id: roleFieldName
+      type: System.String
+    - id: accountIdFieldName
+      type: System.String
+    - id: expiresAtFieldName
+      type: System.String
+    return:
+      type: Butterfly.Auth.UserRefToken
+    content.vb: Public Shared Function FromDict(dict As System.Collections.Generic.Dictionary(Of String, Object), idFieldName As String, userIdFieldName As String, usernameFieldName As String, roleFieldName As String, accountIdFieldName As String, expiresAtFieldName As String) As UserRefToken
+  overload: Butterfly.Auth.UserRefToken.FromDict*
+  nameWithType.vb: UserRefToken.FromDict(System.Collections.Generic.Dictionary(Of String, Object), String, String, String, String, String, String)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: Butterfly.Auth.UserRefToken.FromDict(System.Collections.Generic.Dictionary(Of System.String, System.Object), System.String, System.String, System.String, System.String, System.String, System.String)
+  name.vb: FromDict(System.Collections.Generic.Dictionary(Of String, Object), String, String, String, String, String, String)
+references:
+- uid: Butterfly.Auth.AuthManager.LoginAsync(System.Collections.Generic.Dictionary{System.String,System.Object})
+  commentId: M:Butterfly.Auth.AuthManager.LoginAsync(System.Collections.Generic.Dictionary{System.String,System.Object})
+  isExternal: true
+- uid: Butterfly.Auth.AuthManager.RegisterAsync(System.Object,System.Collections.Generic.Dictionary{System.String,System.Object})
+  commentId: M:Butterfly.Auth.AuthManager.RegisterAsync(System.Object,System.Collections.Generic.Dictionary{System.String,System.Object})
+  isExternal: true
+- uid: Butterfly.Auth
+  commentId: N:Butterfly.Auth
+  name: Butterfly.Auth
+  nameWithType: Butterfly.Auth
+  fullName: Butterfly.Auth
+- uid: System.Object
+  commentId: T:System.Object
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Butterfly.Auth.AuthToken
+  commentId: T:Butterfly.Auth.AuthToken
+  parent: Butterfly.Auth
+  name: AuthToken
+  nameWithType: AuthToken
+  fullName: Butterfly.Auth.AuthToken
+- uid: Butterfly.Auth.AuthToken.type
+  commentId: F:Butterfly.Auth.AuthToken.type
+  parent: Butterfly.Auth.AuthToken
+  name: type
+  nameWithType: AuthToken.type
+  fullName: Butterfly.Auth.AuthToken.type
+- uid: Butterfly.Auth.AuthToken.accountId
+  commentId: F:Butterfly.Auth.AuthToken.accountId
+  parent: Butterfly.Auth.AuthToken
+  name: accountId
+  nameWithType: AuthToken.accountId
+  fullName: Butterfly.Auth.AuthToken.accountId
+- uid: Butterfly.Auth.AuthToken.role
+  commentId: F:Butterfly.Auth.AuthToken.role
+  parent: Butterfly.Auth.AuthToken
+  name: role
+  nameWithType: AuthToken.role
+  fullName: Butterfly.Auth.AuthToken.role
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: DateTime
+  isExternal: true
+  name: DateTime
+  nameWithType: DateTime
+  fullName: DateTime
+- uid: Butterfly.Auth.UserRefToken.#ctor*
+  commentId: Overload:Butterfly.Auth.UserRefToken.#ctor
+  name: UserRefToken
+  nameWithType: UserRefToken.UserRefToken
+  fullName: Butterfly.Auth.UserRefToken.UserRefToken
+- uid: Butterfly.Auth.UserRefToken.FromDict*
+  commentId: Overload:Butterfly.Auth.UserRefToken.FromDict
+  name: FromDict
+  nameWithType: UserRefToken.FromDict
+  fullName: Butterfly.Auth.UserRefToken.FromDict
+- uid: System.Collections.Generic.Dictionary{System.String,System.Object}
+  commentId: '!:System.Collections.Generic.Dictionary{System.String,System.Object}'
+  definition: System.Collections.Generic.Dictionary`2
+  name: System.Collections.Generic.Dictionary<String, Object>
+  nameWithType: System.Collections.Generic.Dictionary<String, Object>
+  fullName: System.Collections.Generic.Dictionary<System.String, System.Object>
+  nameWithType.vb: System.Collections.Generic.Dictionary(Of String, Object)
+  fullName.vb: System.Collections.Generic.Dictionary(Of System.String, System.Object)
+  name.vb: System.Collections.Generic.Dictionary(Of String, Object)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: System.Collections.Generic.Dictionary
+    nameWithType: System.Collections.Generic.Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: System.Collections.Generic.Dictionary
+    nameWithType: System.Collections.Generic.Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Butterfly.Auth.UserRefToken
+  commentId: T:Butterfly.Auth.UserRefToken
+  parent: Butterfly.Auth
+  name: UserRefToken
+  nameWithType: UserRefToken
+  fullName: Butterfly.Auth.UserRefToken
+- uid: System.Collections.Generic.Dictionary`2
+  isExternal: true
+  name: System.Collections.Generic.Dictionary<, >
+  nameWithType: System.Collections.Generic.Dictionary<, >
+  fullName: System.Collections.Generic.Dictionary<, >
+  nameWithType.vb: System.Collections.Generic.Dictionary(Of , )
+  fullName.vb: System.Collections.Generic.Dictionary(Of , )
+  name.vb: System.Collections.Generic.Dictionary(Of , )
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: System.Collections.Generic.Dictionary
+    nameWithType: System.Collections.Generic.Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: System.Collections.Generic.Dictionary
+    nameWithType: System.Collections.Generic.Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+shouldSkipMarkup: true

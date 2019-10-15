@@ -1,0 +1,69 @@
+### YamlMime:ManagedReference
+items:
+- uid: Butterfly.Auth
+  commentId: N:Butterfly.Auth
+  id: Butterfly.Auth
+  children:
+  - Butterfly.Auth.AuthManager
+  - Butterfly.Auth.AuthToken
+  - Butterfly.Auth.IAuthenticator
+  - Butterfly.Auth.ShareCodeAuthenticator
+  - Butterfly.Auth.ShareCodeToken
+  - Butterfly.Auth.UserRefToken
+  - Butterfly.Auth.UserRefTokenAuthenticator
+  langs:
+  - csharp
+  - vb
+  name: Butterfly.Auth
+  nameWithType: Butterfly.Auth
+  fullName: Butterfly.Auth
+  type: Namespace
+  assemblies:
+  - Butterfly.Auth
+references:
+- uid: Butterfly.Auth.AuthManager
+  commentId: T:Butterfly.Auth.AuthManager
+  name: AuthManager
+  nameWithType: AuthManager
+  fullName: Butterfly.Auth.AuthManager
+- uid: Butterfly.Auth.AuthToken
+  commentId: T:Butterfly.Auth.AuthToken
+  parent: Butterfly.Auth
+  name: AuthToken
+  nameWithType: AuthToken
+  fullName: Butterfly.Auth.AuthToken
+- uid: Butterfly.Auth.IAuthenticator
+  commentId: T:Butterfly.Auth.IAuthenticator
+  parent: Butterfly.Auth
+  name: IAuthenticator
+  nameWithType: IAuthenticator
+  fullName: Butterfly.Auth.IAuthenticator
+- uid: Butterfly.Auth.ShareCodeAuthenticator
+  commentId: T:Butterfly.Auth.ShareCodeAuthenticator
+  parent: Butterfly.Auth
+  name: ShareCodeAuthenticator
+  nameWithType: ShareCodeAuthenticator
+  fullName: Butterfly.Auth.ShareCodeAuthenticator
+- uid: Butterfly.Auth.ShareCodeToken
+  commentId: T:Butterfly.Auth.ShareCodeToken
+  name: ShareCodeToken
+  nameWithType: ShareCodeToken
+  fullName: Butterfly.Auth.ShareCodeToken
+- uid: Butterfly.Auth.UserRefTokenAuthenticator
+  commentId: T:Butterfly.Auth.UserRefTokenAuthenticator
+  parent: Butterfly.Auth
+  name: UserRefTokenAuthenticator
+  nameWithType: UserRefTokenAuthenticator
+  fullName: Butterfly.Auth.UserRefTokenAuthenticator
+- uid: Butterfly.Auth.UserRefToken
+  commentId: T:Butterfly.Auth.UserRefToken
+  parent: Butterfly.Auth
+  name: UserRefToken
+  nameWithType: UserRefToken
+  fullName: Butterfly.Auth.UserRefToken
+- uid: Butterfly.Auth
+  commentId: N:Butterfly.Auth
+  name: Butterfly.Auth
+  nameWithType: Butterfly.Auth
+  fullName: Butterfly.Auth
+shouldSkipMarkup: true

@@ -1,0 +1,23 @@
+### YamlMime:TableOfContent
+- uid: Butterfly.Auth
+  name: Butterfly.Auth
+  items:
+  - uid: Butterfly.Auth.AuthManager
+    name: AuthManager
+  - uid: Butterfly.Auth.AuthToken
+    name: AuthToken
+  - uid: Butterfly.Auth.IAuthenticator
+    name: IAuthenticator
+  - uid: Butterfly.Auth.ShareCodeAuthenticator
+    name: ShareCodeAuthenticator
+  - uid: Butterfly.Auth.ShareCodeToken
+    name: ShareCodeToken
+  - uid: Butterfly.Auth.UserRefToken
+    name: UserRefToken
+  - uid: Butterfly.Auth.UserRefTokenAuthenticator
+    name: UserRefTokenAuthenticator
+- uid: Butterfly.Core.Test
+  name: Butterfly.Core.Test
+  items:
+  - uid: Butterfly.Core.Test.AuthTest
+    name: AuthTest
