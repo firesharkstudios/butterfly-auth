@@ -24,7 +24,7 @@ items:
   - Butterfly.Auth.AuthManager.ForgotUsernameAsync(System.String)
   - Butterfly.Auth.AuthManager.getExtraAccountInfo
   - Butterfly.Auth.AuthManager.getExtraUserInfo
-  - Butterfly.Auth.AuthManager.GetUserRefToken(Butterfly.Web.IWebRequest)
+  - Butterfly.Auth.AuthManager.GetUserRefToken(Butterfly.Web.WebApi.IWebRequest)
   - Butterfly.Auth.AuthManager.logger
   - Butterfly.Auth.AuthManager.LoginAsync(System.Collections.Generic.Dictionary{System.String,System.Object})
   - Butterfly.Auth.AuthManager.LookupUsernameAsync(System.String,System.String)
@@ -42,7 +42,7 @@ items:
   - Butterfly.Auth.AuthManager.resetCodeLength
   - Butterfly.Auth.AuthManager.ResetPasswordAsync(System.Collections.Generic.Dictionary{System.String,System.Object})
   - Butterfly.Auth.AuthManager.resetTokenDurationMinutes
-  - Butterfly.Auth.AuthManager.SetupWebApi(IWebApi,System.String)
+  - Butterfly.Auth.AuthManager.SetupWebApi(Butterfly.Web.WebApi.IWebApi,System.String)
   - Butterfly.Auth.AuthManager.shareCodeAuthenticator
   - Butterfly.Auth.AuthManager.usernameFieldValidator
   - Butterfly.Auth.AuthManager.userRefTokenAuthenticator
@@ -72,10 +72,12 @@ items:
   type: Class
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: AuthManager
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 85
+    startLine: 83
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -108,10 +110,12 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: logger
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 86
+    startLine: 84
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -141,10 +145,12 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: database
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 88
+    startLine: 86
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -172,10 +178,12 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: authTokenDurationDays
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 90
+    startLine: 88
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -203,10 +211,12 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: resetCodeLength
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 91
+    startLine: 89
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -234,10 +244,12 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: resetTokenDurationMinutes
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 92
+    startLine: 90
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -265,10 +277,12 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: accountTableName
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 94
+    startLine: 92
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -296,10 +310,12 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: accountTableIdFieldName
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 95
+    startLine: 93
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -327,10 +343,12 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: accountTableShareCodeFieldName
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 96
+    startLine: 94
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -358,10 +376,12 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: userTableName
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 98
+    startLine: 96
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -389,10 +409,12 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: userTableIdFieldName
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 99
+    startLine: 97
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -420,10 +442,12 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: userTableUsernameFieldName
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 100
+    startLine: 98
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -451,10 +475,12 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: userTableEmailFieldName
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 101
+    startLine: 99
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -482,10 +508,12 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: userTableEmailVerifiedAtFieldName
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 102
+    startLine: 100
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -513,10 +541,12 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: userTablePhoneFieldName
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 103
+    startLine: 101
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -544,10 +574,12 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: userTablePhoneVerifiedAtFieldName
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 104
+    startLine: 102
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -575,10 +607,12 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: userTableSaltFieldName
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 105
+    startLine: 103
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -606,10 +640,12 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: userTablePasswordHashFieldName
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 106
+    startLine: 104
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -637,10 +673,12 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: userTableFirstNameFieldName
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 107
+    startLine: 105
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -668,10 +706,12 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: userTableLastNameFieldName
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 108
+    startLine: 106
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -699,10 +739,12 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: userTableResetCodeFieldName
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 109
+    startLine: 107
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -730,10 +772,12 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: userTableResetCodeExpiresAtFieldName
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 110
+    startLine: 108
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -761,10 +805,12 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: userTableAccountIdFieldName
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 111
+    startLine: 109
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -792,10 +838,12 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: userTableRoleFieldName
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 112
+    startLine: 110
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -823,10 +871,12 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: defaultRole
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 114
+    startLine: 112
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -854,10 +904,12 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: getExtraAccountInfo
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 116
+    startLine: 114
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -885,10 +937,12 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: getExtraUserInfo
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 117
+    startLine: 115
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -916,10 +970,12 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: onEmailVerify
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 118
+    startLine: 116
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -947,10 +1003,12 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: onPhoneVerify
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 119
+    startLine: 117
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -978,10 +1036,12 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: onRegisterAccount
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 121
+    startLine: 119
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -1009,10 +1069,12 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: onRegisterUser
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 122
+    startLine: 120
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -1040,10 +1102,12 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: onForgotPassword
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 123
+    startLine: 121
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -1071,10 +1135,12 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: onForgotUsername
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 124
+    startLine: 122
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -1102,10 +1168,12 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: onCheckVersion
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 125
+    startLine: 123
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -1133,10 +1201,12 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: usernameFieldValidator
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 127
+    startLine: 125
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -1164,10 +1234,12 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: passwordFieldValidator
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 128
+    startLine: 126
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -1195,10 +1267,12 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: nameFieldValidator
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 129
+    startLine: 127
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -1226,10 +1300,12 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: emailFieldValidator
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 130
+    startLine: 128
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -1257,10 +1333,12 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: phoneFieldValidator
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 131
+    startLine: 129
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -1288,10 +1366,12 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: authenticatorByType
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 133
+    startLine: 131
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -1319,10 +1399,12 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: userRefTokenAuthenticator
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 135
+    startLine: 133
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -1350,10 +1432,12 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: shareCodeAuthenticator
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 136
+    startLine: 134
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -1381,10 +1465,12 @@ items:
   type: Constructor
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: .ctor
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 173
+    startLine: 171
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -1511,10 +1597,12 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: VERSION_CLEAN_REGEX
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 272
+    startLine: 270
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -1531,23 +1619,25 @@ items:
   - Protected
   - Shared
   - ReadOnly
-- uid: Butterfly.Auth.AuthManager.SetupWebApi(IWebApi,System.String)
-  commentId: M:Butterfly.Auth.AuthManager.SetupWebApi(IWebApi,System.String)
-  id: SetupWebApi(IWebApi,System.String)
+- uid: Butterfly.Auth.AuthManager.SetupWebApi(Butterfly.Web.WebApi.IWebApi,System.String)
+  commentId: M:Butterfly.Auth.AuthManager.SetupWebApi(Butterfly.Web.WebApi.IWebApi,System.String)
+  id: SetupWebApi(Butterfly.Web.WebApi.IWebApi,System.String)
   parent: Butterfly.Auth.AuthManager
   langs:
   - csharp
   - vb
   name: SetupWebApi(IWebApi, String)
   nameWithType: AuthManager.SetupWebApi(IWebApi, String)
-  fullName: Butterfly.Auth.AuthManager.SetupWebApi(IWebApi, System.String)
+  fullName: Butterfly.Auth.AuthManager.SetupWebApi(Butterfly.Web.WebApi.IWebApi, System.String)
   type: Method
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: SetupWebApi
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 293
+    startLine: 291
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -1558,7 +1648,7 @@ items:
     content: public void SetupWebApi(IWebApi webApi, string pathPrefix = "/api/auth")
     parameters:
     - id: webApi
-      type: IWebApi
+      type: Butterfly.Web.WebApi.IWebApi
       description: ''
     - id: pathPrefix
       type: System.String
@@ -1582,10 +1672,12 @@ items:
   type: Method
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: VerifyAsync
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 368
+    startLine: 366
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -1631,10 +1723,12 @@ items:
   type: Method
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: RegisterAsync
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 398
+    startLine: 396
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -1674,10 +1768,12 @@ items:
   type: Method
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: AuthenticateAsync
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 516
+    startLine: 514
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -1714,10 +1810,12 @@ items:
   type: Method
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: LookupUsernameAsync
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 527
+    startLine: 525
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -1754,10 +1852,12 @@ items:
   type: Method
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: CreateAnonymousUserAsync
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 540
+    startLine: 538
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -1787,10 +1887,12 @@ items:
   type: Method
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: CreateUserRefTokenAsync
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 572
+    startLine: 570
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -1824,10 +1926,12 @@ items:
   type: Method
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: CreateUserRefTokenAsync
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 596
+    startLine: 594
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -1865,10 +1969,12 @@ items:
   type: Method
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: LoginAsync
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 607
+    startLine: 605
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -1905,10 +2011,12 @@ items:
   type: Method
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: ForgotPasswordAsync
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 629
+    startLine: 627
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -1942,10 +2050,12 @@ items:
   type: Method
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: ResetPasswordAsync
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 645
+    startLine: 643
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -1982,10 +2092,12 @@ items:
   type: Method
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: ForgotUsernameAsync
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 678
+    startLine: 676
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -2019,10 +2131,12 @@ items:
   type: Method
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: CreateResetCodeAsync
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 706
+    startLine: 704
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -2052,10 +2166,12 @@ items:
   type: Method
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: ConvertInputToDict
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 722
+    startLine: 720
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -2072,23 +2188,25 @@ items:
   - protected
   modifiers.vb:
   - Protected
-- uid: Butterfly.Auth.AuthManager.GetUserRefToken(Butterfly.Web.IWebRequest)
-  commentId: M:Butterfly.Auth.AuthManager.GetUserRefToken(Butterfly.Web.IWebRequest)
-  id: GetUserRefToken(Butterfly.Web.IWebRequest)
+- uid: Butterfly.Auth.AuthManager.GetUserRefToken(Butterfly.Web.WebApi.IWebRequest)
+  commentId: M:Butterfly.Auth.AuthManager.GetUserRefToken(Butterfly.Web.WebApi.IWebRequest)
+  id: GetUserRefToken(Butterfly.Web.WebApi.IWebRequest)
   parent: Butterfly.Auth.AuthManager
   langs:
   - csharp
   - vb
   name: GetUserRefToken(IWebRequest)
   nameWithType: AuthManager.GetUserRefToken(IWebRequest)
-  fullName: Butterfly.Auth.AuthManager.GetUserRefToken(Butterfly.Web.IWebRequest)
+  fullName: Butterfly.Auth.AuthManager.GetUserRefToken(Butterfly.Web.WebApi.IWebRequest)
   type: Method
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: GetUserRefToken
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 739
+    startLine: 737
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -2096,7 +2214,7 @@ items:
     content: public Task<UserRefToken> GetUserRefToken(IWebRequest req)
     parameters:
     - id: req
-      type: Butterfly.Web.IWebRequest
+      type: Butterfly.Web.WebApi.IWebRequest
     return:
       type: Task{Butterfly.Auth.UserRefToken}
     content.vb: Public Function GetUserRefToken(req As IWebRequest) As Task(Of UserRefToken)
@@ -2792,12 +2910,17 @@ references:
   name: SetupWebApi
   nameWithType: AuthManager.SetupWebApi
   fullName: Butterfly.Auth.AuthManager.SetupWebApi
-- uid: IWebApi
-  commentId: '!:IWebApi'
-  isExternal: true
+- uid: Butterfly.Web.WebApi.IWebApi
+  commentId: T:Butterfly.Web.WebApi.IWebApi
+  parent: Butterfly.Web.WebApi
   name: IWebApi
   nameWithType: IWebApi
-  fullName: IWebApi
+  fullName: Butterfly.Web.WebApi.IWebApi
+- uid: Butterfly.Web.WebApi
+  commentId: N:Butterfly.Web.WebApi
+  name: Butterfly.Web.WebApi
+  nameWithType: Butterfly.Web.WebApi
+  fullName: Butterfly.Web.WebApi
 - uid: Butterfly.Auth.AuthManager.VerifyAsync*
   commentId: Overload:Butterfly.Auth.AuthManager.VerifyAsync
   name: VerifyAsync
@@ -3233,15 +3356,10 @@ references:
   name: GetUserRefToken
   nameWithType: AuthManager.GetUserRefToken
   fullName: Butterfly.Auth.AuthManager.GetUserRefToken
-- uid: Butterfly.Web.IWebRequest
-  commentId: T:Butterfly.Web.IWebRequest
-  parent: Butterfly.Web
+- uid: Butterfly.Web.WebApi.IWebRequest
+  commentId: T:Butterfly.Web.WebApi.IWebRequest
+  parent: Butterfly.Web.WebApi
   name: IWebRequest
   nameWithType: IWebRequest
-  fullName: Butterfly.Web.IWebRequest
-- uid: Butterfly.Web
-  commentId: N:Butterfly.Web
-  name: Butterfly.Web
-  nameWithType: Butterfly.Web
-  fullName: Butterfly.Web
+  fullName: Butterfly.Web.WebApi.IWebRequest
 shouldSkipMarkup: true

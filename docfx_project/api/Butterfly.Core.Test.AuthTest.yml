@@ -17,7 +17,9 @@ items:
   type: Class
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth.Test/AuthTest.cs
+      path: Butterfly.Auth.Test/AuthTest.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: AuthTest
     path: ../Butterfly.Auth.Test/AuthTest.cs
     startLine: 15
@@ -50,7 +52,9 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth.Test/AuthTest.cs
+      path: Butterfly.Auth.Test/AuthTest.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: logger
     path: ../Butterfly.Auth.Test/AuthTest.cs
     startLine: 17
@@ -83,7 +87,9 @@ items:
   type: Method
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth.Test/AuthTest.cs
+      path: Butterfly.Auth.Test/AuthTest.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: SimpleAuthTest
     path: ../Butterfly.Auth.Test/AuthTest.cs
     startLine: 19
@@ -113,7 +119,9 @@ items:
   type: Method
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth.Test/AuthTest.cs
+      path: Butterfly.Auth.Test/AuthTest.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: TruncateData
     path: ../Butterfly.Auth.Test/AuthTest.cs
     startLine: 52

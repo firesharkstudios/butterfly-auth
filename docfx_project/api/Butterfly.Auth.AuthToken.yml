@@ -18,10 +18,12 @@ items:
   type: Class
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: AuthToken
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 750
+    startLine: 748
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -58,10 +60,12 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: type
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 751
+    startLine: 749
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -89,10 +93,12 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: accountId
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 752
+    startLine: 750
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -120,10 +126,12 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: role
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 753
+    startLine: 751
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -151,10 +159,12 @@ items:
   type: Constructor
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/AuthManager.cs
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: .ctor
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 755
+    startLine: 753
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth

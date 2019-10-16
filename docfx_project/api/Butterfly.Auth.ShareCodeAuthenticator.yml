@@ -22,7 +22,9 @@ items:
   type: Class
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/ShareCodeAuthenticator.cs
+      path: Butterfly.Auth/ShareCodeAuthenticator.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: ShareCodeAuthenticator
     path: ../Butterfly.Auth/ShareCodeAuthenticator.cs
     startLine: 10
@@ -58,7 +60,9 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/ShareCodeAuthenticator.cs
+      path: Butterfly.Auth/ShareCodeAuthenticator.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: logger
     path: ../Butterfly.Auth/ShareCodeAuthenticator.cs
     startLine: 11
@@ -91,7 +95,9 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/ShareCodeAuthenticator.cs
+      path: Butterfly.Auth/ShareCodeAuthenticator.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: AUTH_TYPE
     path: ../Butterfly.Auth/ShareCodeAuthenticator.cs
     startLine: 13
@@ -122,7 +128,9 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/ShareCodeAuthenticator.cs
+      path: Butterfly.Auth/ShareCodeAuthenticator.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: database
     path: ../Butterfly.Auth/ShareCodeAuthenticator.cs
     startLine: 15
@@ -153,7 +161,9 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/ShareCodeAuthenticator.cs
+      path: Butterfly.Auth/ShareCodeAuthenticator.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: accountTableName
     path: ../Butterfly.Auth/ShareCodeAuthenticator.cs
     startLine: 17
@@ -184,7 +194,9 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/ShareCodeAuthenticator.cs
+      path: Butterfly.Auth/ShareCodeAuthenticator.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: accountTableIdFieldName
     path: ../Butterfly.Auth/ShareCodeAuthenticator.cs
     startLine: 18
@@ -215,7 +227,9 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/ShareCodeAuthenticator.cs
+      path: Butterfly.Auth/ShareCodeAuthenticator.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: accountTableShareCodeFieldName
     path: ../Butterfly.Auth/ShareCodeAuthenticator.cs
     startLine: 19
@@ -246,7 +260,9 @@ items:
   type: Constructor
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/ShareCodeAuthenticator.cs
+      path: Butterfly.Auth/ShareCodeAuthenticator.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: .ctor
     path: ../Butterfly.Auth/ShareCodeAuthenticator.cs
     startLine: 28
@@ -289,7 +305,9 @@ items:
   type: Method
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/ShareCodeAuthenticator.cs
+      path: Butterfly.Auth/ShareCodeAuthenticator.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: AuthenticateAsync
     path: ../Butterfly.Auth/ShareCodeAuthenticator.cs
     startLine: 46

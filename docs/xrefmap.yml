@@ -186,11 +186,11 @@ references:
   commentId: F:Butterfly.Auth.AuthManager.getExtraUserInfo
   fullName: Butterfly.Auth.AuthManager.getExtraUserInfo
   nameWithType: AuthManager.getExtraUserInfo
-- uid: Butterfly.Auth.AuthManager.GetUserRefToken(Butterfly.Web.IWebRequest)
+- uid: Butterfly.Auth.AuthManager.GetUserRefToken(Butterfly.Web.WebApi.IWebRequest)
   name: GetUserRefToken(IWebRequest)
-  href: api/Butterfly.Auth.AuthManager.html#Butterfly_Auth_AuthManager_GetUserRefToken_Butterfly_Web_IWebRequest_
-  commentId: M:Butterfly.Auth.AuthManager.GetUserRefToken(Butterfly.Web.IWebRequest)
-  fullName: Butterfly.Auth.AuthManager.GetUserRefToken(Butterfly.Web.IWebRequest)
+  href: api/Butterfly.Auth.AuthManager.html#Butterfly_Auth_AuthManager_GetUserRefToken_Butterfly_Web_WebApi_IWebRequest_
+  commentId: M:Butterfly.Auth.AuthManager.GetUserRefToken(Butterfly.Web.WebApi.IWebRequest)
+  fullName: Butterfly.Auth.AuthManager.GetUserRefToken(Butterfly.Web.WebApi.IWebRequest)
   nameWithType: AuthManager.GetUserRefToken(IWebRequest)
 - uid: Butterfly.Auth.AuthManager.GetUserRefToken*
   name: GetUserRefToken
@@ -338,11 +338,11 @@ references:
   commentId: F:Butterfly.Auth.AuthManager.resetTokenDurationMinutes
   fullName: Butterfly.Auth.AuthManager.resetTokenDurationMinutes
   nameWithType: AuthManager.resetTokenDurationMinutes
-- uid: Butterfly.Auth.AuthManager.SetupWebApi(IWebApi,System.String)
+- uid: Butterfly.Auth.AuthManager.SetupWebApi(Butterfly.Web.WebApi.IWebApi,System.String)
   name: SetupWebApi(IWebApi, String)
-  href: api/Butterfly.Auth.AuthManager.html#Butterfly_Auth_AuthManager_SetupWebApi_IWebApi_System_String_
-  commentId: M:Butterfly.Auth.AuthManager.SetupWebApi(IWebApi,System.String)
-  fullName: Butterfly.Auth.AuthManager.SetupWebApi(IWebApi, System.String)
+  href: api/Butterfly.Auth.AuthManager.html#Butterfly_Auth_AuthManager_SetupWebApi_Butterfly_Web_WebApi_IWebApi_System_String_
+  commentId: M:Butterfly.Auth.AuthManager.SetupWebApi(Butterfly.Web.WebApi.IWebApi,System.String)
+  fullName: Butterfly.Auth.AuthManager.SetupWebApi(Butterfly.Web.WebApi.IWebApi, System.String)
   nameWithType: AuthManager.SetupWebApi(IWebApi, String)
 - uid: Butterfly.Auth.AuthManager.SetupWebApi*
   name: SetupWebApi

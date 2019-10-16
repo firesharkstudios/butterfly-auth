@@ -15,7 +15,9 @@ items:
   type: Class
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/ShareCodeAuthenticator.cs
+      path: Butterfly.Auth/ShareCodeAuthenticator.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: ShareCodeToken
     path: ../Butterfly.Auth/ShareCodeAuthenticator.cs
     startLine: 59
@@ -55,7 +57,9 @@ items:
   type: Constructor
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/ShareCodeAuthenticator.cs
+      path: Butterfly.Auth/ShareCodeAuthenticator.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: .ctor
     path: ../Butterfly.Auth/ShareCodeAuthenticator.cs
     startLine: 60

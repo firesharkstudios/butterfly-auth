@@ -1,10 +1,10 @@
 # Butterfly.Auth ![Butterfly Logo](https://raw.githubusercontent.com/firesharkstudios/Butterfly/master/img/logo-40x40.png) 
 
-> Collection of utility methods used in the Butterfly Server
+> Authenticate clients in C# using Butterfly.Db and Butterfly.Web
 
 ## Getting Started
 
-## Install from Nuget
+### Install from Nuget
 
 | Name | Package | Install |
 | --- | --- | --- |
@@ -12,11 +12,11 @@
 
 ### Install from Source Code
 
-git clone https://github.com/firesharkstudios/butterfly-auth
+```git clone https://github.com/firesharkstudios/butterfly-auth```
 
-## API Documentation
+## Overview
 
-Available [here](http://htmlpreview.github.io/?https://github.com/firesharkstudios/butterfly-auth/blob/master/docs/api/Butterfly.Auth.html).
+Primarily useful to authenticate clients making requests to [Butterfly.Web](https://github.com/firesharkstudios/butterfly-web).
 
 ## Contributing
 

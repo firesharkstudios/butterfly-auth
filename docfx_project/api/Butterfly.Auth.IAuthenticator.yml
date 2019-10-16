@@ -15,7 +15,9 @@ items:
   type: Interface
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/IAuthenticator.cs
+      path: Butterfly.Auth/IAuthenticator.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: IAuthenticator
     path: ../Butterfly.Auth/IAuthenticator.cs
     startLine: 6
@@ -44,7 +46,9 @@ items:
   type: Method
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/IAuthenticator.cs
+      path: Butterfly.Auth/IAuthenticator.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: AuthenticateAsync
     path: ../Butterfly.Auth/IAuthenticator.cs
     startLine: 7

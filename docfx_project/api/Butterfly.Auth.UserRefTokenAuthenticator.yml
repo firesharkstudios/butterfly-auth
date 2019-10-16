@@ -28,7 +28,9 @@ items:
   type: Class
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/UserRefTokenAuthenticator.cs
+      path: Butterfly.Auth/UserRefTokenAuthenticator.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: UserRefTokenAuthenticator
     path: ../Butterfly.Auth/UserRefTokenAuthenticator.cs
     startLine: 12
@@ -64,7 +66,9 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/UserRefTokenAuthenticator.cs
+      path: Butterfly.Auth/UserRefTokenAuthenticator.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: logger
     path: ../Butterfly.Auth/UserRefTokenAuthenticator.cs
     startLine: 13
@@ -97,7 +101,9 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/UserRefTokenAuthenticator.cs
+      path: Butterfly.Auth/UserRefTokenAuthenticator.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: AUTH_TYPE
     path: ../Butterfly.Auth/UserRefTokenAuthenticator.cs
     startLine: 15
@@ -128,7 +134,9 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/UserRefTokenAuthenticator.cs
+      path: Butterfly.Auth/UserRefTokenAuthenticator.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: database
     path: ../Butterfly.Auth/UserRefTokenAuthenticator.cs
     startLine: 17
@@ -159,7 +167,9 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/UserRefTokenAuthenticator.cs
+      path: Butterfly.Auth/UserRefTokenAuthenticator.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: authTokenTableName
     path: ../Butterfly.Auth/UserRefTokenAuthenticator.cs
     startLine: 18
@@ -190,7 +200,9 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/UserRefTokenAuthenticator.cs
+      path: Butterfly.Auth/UserRefTokenAuthenticator.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: authTokenIdFieldName
     path: ../Butterfly.Auth/UserRefTokenAuthenticator.cs
     startLine: 19
@@ -221,7 +233,9 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/UserRefTokenAuthenticator.cs
+      path: Butterfly.Auth/UserRefTokenAuthenticator.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: authTokenTableUserIdFieldName
     path: ../Butterfly.Auth/UserRefTokenAuthenticator.cs
     startLine: 20
@@ -252,7 +266,9 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/UserRefTokenAuthenticator.cs
+      path: Butterfly.Auth/UserRefTokenAuthenticator.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: authTokenTableExpiresAtFieldName
     path: ../Butterfly.Auth/UserRefTokenAuthenticator.cs
     startLine: 21
@@ -283,7 +299,9 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/UserRefTokenAuthenticator.cs
+      path: Butterfly.Auth/UserRefTokenAuthenticator.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: userTableName
     path: ../Butterfly.Auth/UserRefTokenAuthenticator.cs
     startLine: 23
@@ -314,7 +332,9 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/UserRefTokenAuthenticator.cs
+      path: Butterfly.Auth/UserRefTokenAuthenticator.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: userTableUsernameFieldName
     path: ../Butterfly.Auth/UserRefTokenAuthenticator.cs
     startLine: 24
@@ -345,7 +365,9 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/UserRefTokenAuthenticator.cs
+      path: Butterfly.Auth/UserRefTokenAuthenticator.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: userTableAccountIdFieldName
     path: ../Butterfly.Auth/UserRefTokenAuthenticator.cs
     startLine: 25
@@ -376,7 +398,9 @@ items:
   type: Field
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/UserRefTokenAuthenticator.cs
+      path: Butterfly.Auth/UserRefTokenAuthenticator.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: userTableRoleFieldName
     path: ../Butterfly.Auth/UserRefTokenAuthenticator.cs
     startLine: 26
@@ -407,7 +431,9 @@ items:
   type: Constructor
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/UserRefTokenAuthenticator.cs
+      path: Butterfly.Auth/UserRefTokenAuthenticator.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: .ctor
     path: ../Butterfly.Auth/UserRefTokenAuthenticator.cs
     startLine: 40
@@ -465,7 +491,9 @@ items:
   type: Method
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/UserRefTokenAuthenticator.cs
+      path: Butterfly.Auth/UserRefTokenAuthenticator.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: AuthenticateAsync
     path: ../Butterfly.Auth/UserRefTokenAuthenticator.cs
     startLine: 69
@@ -507,7 +535,9 @@ items:
   type: Method
   source:
     remote:
-      path: C:/Users/kent1/Documents/Visual Studio 2019/Projects/Butterfly.Auth/Butterfly.Auth/UserRefTokenAuthenticator.cs
+      path: Butterfly.Auth/UserRefTokenAuthenticator.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: InsertAsync
     path: ../Butterfly.Auth/UserRefTokenAuthenticator.cs
     startLine: 90
