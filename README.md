@@ -14,10 +14,9 @@
 
 # Getting Started
 
-## Creating an AuthManager instance
+## Creating an *AuthManager* instance
 
-Normally, you will create a single instance of *AuthManager*.  
-*AuthManager* only requires passing in an *IDatabase* instance; 
+Normally, you will create a single instance of *AuthManager*. *AuthManager* only requires passing in an *IDatabase* instance; 
 however, the following pattern is useful to get an *AuthManager*
 that verifies emails, verifies phone numbers, sends welcome emails,
 sends forgot password emails, etc.
@@ -39,6 +38,9 @@ var authManager = new AuthManager(
     }
 );
 ```
+
+See [Butterfly.Db](https://github.com/firesharkstudios/butterfly-db) and [Butterfly.Message](https://github.com/firesharkstudios/butterfly-message)
+for more information.
 
 ## Database Structure
 
@@ -84,6 +86,56 @@ CREATE TABLE auth_token(
     PRIMARY KEY(id)
 );
 ```
+
+# Auth Web Api
+
+Calling *AuthManager.SetupWebApi()* creates a web API that allows clients to
+make the following requests...
+
+## GET /api/auth/check-username/\{username\}
+
+Returns true/false if the username is available
+
+## GET /api/auth/check-user-ref-token/\{id\}
+
+Returns true/false if the previously issues user ref token is valid
+
+## POST /api/auth/create-anonymous
+
+Creates an anonymous user (no username) assigning the user random first and last names
+
+## POST /api/auth/register
+
+Registers a user (requires email, phone, and password fields)
+
+Returns a valid user ref token
+
+## POST /api/auth/login
+
+Logs in a user (requires username and password fields)
+
+Returns a valid user ref token
+
+## POST /api/auth/forgot-password
+
+Invokes the *forgotPasswordAsync* function passed to the constructor of *AuthManager* (normally sends a reset password email)
+
+## POST /api/auth/reset-password
+
+Resets a user's password
+
+## POST /api/auth/forgot-username
+
+Invokes the forgotUsernameAsync function passed to the constructor of *AuthManager* (normally sends a forgot username email)
+
+## POST /api/auth/verify-email
+
+Invokes the *verifyAsync* function passed to the constructor of *AuthManager* (normally sends a verify email)
+
+## POST /api/auth/verify-phone
+
+Invokes the *verifyAsync* function passed to the constructor of *AuthManager* (normally sends a verify text)
+
 
 # Contributing
 
