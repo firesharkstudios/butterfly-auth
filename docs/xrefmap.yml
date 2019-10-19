@@ -689,12 +689,12 @@ references:
   commentId: T:Butterfly.Auth.UserRefTokenAuthenticator
   fullName: Butterfly.Auth.UserRefTokenAuthenticator
   nameWithType: UserRefTokenAuthenticator
-- uid: Butterfly.Auth.UserRefTokenAuthenticator.#ctor(Butterfly.Db.IDatabase,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)
-  name: UserRefTokenAuthenticator(IDatabase, String, String, String, String, String, String, String, String)
-  href: api/Butterfly.Auth.UserRefTokenAuthenticator.html#Butterfly_Auth_UserRefTokenAuthenticator__ctor_Butterfly_Db_IDatabase_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String_
-  commentId: M:Butterfly.Auth.UserRefTokenAuthenticator.#ctor(Butterfly.Db.IDatabase,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)
-  fullName: Butterfly.Auth.UserRefTokenAuthenticator.UserRefTokenAuthenticator(Butterfly.Db.IDatabase, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String)
-  nameWithType: UserRefTokenAuthenticator.UserRefTokenAuthenticator(IDatabase, String, String, String, String, String, String, String, String)
+- uid: Butterfly.Auth.UserRefTokenAuthenticator.#ctor(Butterfly.Db.IDatabase,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)
+  name: UserRefTokenAuthenticator(IDatabase, String, String, String, String, String, String, String, String, String)
+  href: api/Butterfly.Auth.UserRefTokenAuthenticator.html#Butterfly_Auth_UserRefTokenAuthenticator__ctor_Butterfly_Db_IDatabase_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String_
+  commentId: M:Butterfly.Auth.UserRefTokenAuthenticator.#ctor(Butterfly.Db.IDatabase,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)
+  fullName: Butterfly.Auth.UserRefTokenAuthenticator.UserRefTokenAuthenticator(Butterfly.Db.IDatabase, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String)
+  nameWithType: UserRefTokenAuthenticator.UserRefTokenAuthenticator(IDatabase, String, String, String, String, String, String, String, String, String)
 - uid: Butterfly.Auth.UserRefTokenAuthenticator.#ctor*
   name: UserRefTokenAuthenticator
   href: api/Butterfly.Auth.UserRefTokenAuthenticator.html#Butterfly_Auth_UserRefTokenAuthenticator__ctor_
@@ -721,18 +721,18 @@ references:
   isSpec: "True"
   fullName: Butterfly.Auth.UserRefTokenAuthenticator.AuthenticateAsync
   nameWithType: UserRefTokenAuthenticator.AuthenticateAsync
-- uid: Butterfly.Auth.UserRefTokenAuthenticator.authTokenIdFieldName
-  name: authTokenIdFieldName
-  href: api/Butterfly.Auth.UserRefTokenAuthenticator.html#Butterfly_Auth_UserRefTokenAuthenticator_authTokenIdFieldName
-  commentId: F:Butterfly.Auth.UserRefTokenAuthenticator.authTokenIdFieldName
-  fullName: Butterfly.Auth.UserRefTokenAuthenticator.authTokenIdFieldName
-  nameWithType: UserRefTokenAuthenticator.authTokenIdFieldName
 - uid: Butterfly.Auth.UserRefTokenAuthenticator.authTokenTableExpiresAtFieldName
   name: authTokenTableExpiresAtFieldName
   href: api/Butterfly.Auth.UserRefTokenAuthenticator.html#Butterfly_Auth_UserRefTokenAuthenticator_authTokenTableExpiresAtFieldName
   commentId: F:Butterfly.Auth.UserRefTokenAuthenticator.authTokenTableExpiresAtFieldName
   fullName: Butterfly.Auth.UserRefTokenAuthenticator.authTokenTableExpiresAtFieldName
   nameWithType: UserRefTokenAuthenticator.authTokenTableExpiresAtFieldName
+- uid: Butterfly.Auth.UserRefTokenAuthenticator.authTokenTableIdFieldName
+  name: authTokenTableIdFieldName
+  href: api/Butterfly.Auth.UserRefTokenAuthenticator.html#Butterfly_Auth_UserRefTokenAuthenticator_authTokenTableIdFieldName
+  commentId: F:Butterfly.Auth.UserRefTokenAuthenticator.authTokenTableIdFieldName
+  fullName: Butterfly.Auth.UserRefTokenAuthenticator.authTokenTableIdFieldName
+  nameWithType: UserRefTokenAuthenticator.authTokenTableIdFieldName
 - uid: Butterfly.Auth.UserRefTokenAuthenticator.authTokenTableName
   name: authTokenTableName
   href: api/Butterfly.Auth.UserRefTokenAuthenticator.html#Butterfly_Auth_UserRefTokenAuthenticator_authTokenTableName
@@ -776,6 +776,12 @@ references:
   commentId: F:Butterfly.Auth.UserRefTokenAuthenticator.userTableAccountIdFieldName
   fullName: Butterfly.Auth.UserRefTokenAuthenticator.userTableAccountIdFieldName
   nameWithType: UserRefTokenAuthenticator.userTableAccountIdFieldName
+- uid: Butterfly.Auth.UserRefTokenAuthenticator.userTableIdFieldName
+  name: userTableIdFieldName
+  href: api/Butterfly.Auth.UserRefTokenAuthenticator.html#Butterfly_Auth_UserRefTokenAuthenticator_userTableIdFieldName
+  commentId: F:Butterfly.Auth.UserRefTokenAuthenticator.userTableIdFieldName
+  fullName: Butterfly.Auth.UserRefTokenAuthenticator.userTableIdFieldName
+  nameWithType: UserRefTokenAuthenticator.userTableIdFieldName
 - uid: Butterfly.Auth.UserRefTokenAuthenticator.userTableName
   name: userTableName
   href: api/Butterfly.Auth.UserRefTokenAuthenticator.html#Butterfly_Auth_UserRefTokenAuthenticator_userTableName
@@ -812,29 +818,16 @@ references:
   commentId: F:Butterfly.Core.Test.AuthTest.logger
   fullName: Butterfly.Core.Test.AuthTest.logger
   nameWithType: AuthTest.logger
-- uid: Butterfly.Core.Test.AuthTest.SimpleAuthTest
-  name: SimpleAuthTest()
-  href: api/Butterfly.Core.Test.AuthTest.html#Butterfly_Core_Test_AuthTest_SimpleAuthTest
-  commentId: M:Butterfly.Core.Test.AuthTest.SimpleAuthTest
-  fullName: Butterfly.Core.Test.AuthTest.SimpleAuthTest()
-  nameWithType: AuthTest.SimpleAuthTest()
-- uid: Butterfly.Core.Test.AuthTest.SimpleAuthTest*
-  name: SimpleAuthTest
-  href: api/Butterfly.Core.Test.AuthTest.html#Butterfly_Core_Test_AuthTest_SimpleAuthTest_
-  commentId: Overload:Butterfly.Core.Test.AuthTest.SimpleAuthTest
+- uid: Butterfly.Core.Test.AuthTest.RegistrationTests
+  name: RegistrationTests()
+  href: api/Butterfly.Core.Test.AuthTest.html#Butterfly_Core_Test_AuthTest_RegistrationTests
+  commentId: M:Butterfly.Core.Test.AuthTest.RegistrationTests
+  fullName: Butterfly.Core.Test.AuthTest.RegistrationTests()
+  nameWithType: AuthTest.RegistrationTests()
+- uid: Butterfly.Core.Test.AuthTest.RegistrationTests*
+  name: RegistrationTests
+  href: api/Butterfly.Core.Test.AuthTest.html#Butterfly_Core_Test_AuthTest_RegistrationTests_
+  commentId: Overload:Butterfly.Core.Test.AuthTest.RegistrationTests
   isSpec: "True"
-  fullName: Butterfly.Core.Test.AuthTest.SimpleAuthTest
-  nameWithType: AuthTest.SimpleAuthTest
-- uid: Butterfly.Core.Test.AuthTest.TruncateData(IDatabase)
-  name: TruncateData(IDatabase)
-  href: api/Butterfly.Core.Test.AuthTest.html#Butterfly_Core_Test_AuthTest_TruncateData_IDatabase_
-  commentId: M:Butterfly.Core.Test.AuthTest.TruncateData(IDatabase)
-  fullName: Butterfly.Core.Test.AuthTest.TruncateData(IDatabase)
-  nameWithType: AuthTest.TruncateData(IDatabase)
-- uid: Butterfly.Core.Test.AuthTest.TruncateData*
-  name: TruncateData
-  href: api/Butterfly.Core.Test.AuthTest.html#Butterfly_Core_Test_AuthTest_TruncateData_
-  commentId: Overload:Butterfly.Core.Test.AuthTest.TruncateData
-  isSpec: "True"
-  fullName: Butterfly.Core.Test.AuthTest.TruncateData
-  nameWithType: AuthTest.TruncateData
+  fullName: Butterfly.Core.Test.AuthTest.RegistrationTests
+  nameWithType: AuthTest.RegistrationTests

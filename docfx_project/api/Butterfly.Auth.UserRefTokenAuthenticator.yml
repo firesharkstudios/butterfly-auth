@@ -5,17 +5,18 @@ items:
   id: UserRefTokenAuthenticator
   parent: Butterfly.Auth
   children:
-  - Butterfly.Auth.UserRefTokenAuthenticator.#ctor(Butterfly.Db.IDatabase,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)
+  - Butterfly.Auth.UserRefTokenAuthenticator.#ctor(Butterfly.Db.IDatabase,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)
   - Butterfly.Auth.UserRefTokenAuthenticator.AUTH_TYPE
   - Butterfly.Auth.UserRefTokenAuthenticator.AuthenticateAsync(System.String,System.String)
-  - Butterfly.Auth.UserRefTokenAuthenticator.authTokenIdFieldName
   - Butterfly.Auth.UserRefTokenAuthenticator.authTokenTableExpiresAtFieldName
+  - Butterfly.Auth.UserRefTokenAuthenticator.authTokenTableIdFieldName
   - Butterfly.Auth.UserRefTokenAuthenticator.authTokenTableName
   - Butterfly.Auth.UserRefTokenAuthenticator.authTokenTableUserIdFieldName
   - Butterfly.Auth.UserRefTokenAuthenticator.database
   - Butterfly.Auth.UserRefTokenAuthenticator.InsertAsync(Butterfly.Db.ITransaction,System.String,DateTime)
   - Butterfly.Auth.UserRefTokenAuthenticator.logger
   - Butterfly.Auth.UserRefTokenAuthenticator.userTableAccountIdFieldName
+  - Butterfly.Auth.UserRefTokenAuthenticator.userTableIdFieldName
   - Butterfly.Auth.UserRefTokenAuthenticator.userTableName
   - Butterfly.Auth.UserRefTokenAuthenticator.userTableRoleFieldName
   - Butterfly.Auth.UserRefTokenAuthenticator.userTableUsernameFieldName
@@ -33,7 +34,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: UserRefTokenAuthenticator
     path: ../Butterfly.Auth/UserRefTokenAuthenticator.cs
-    startLine: 12
+    startLine: 13
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -71,7 +72,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: logger
     path: ../Butterfly.Auth/UserRefTokenAuthenticator.cs
-    startLine: 13
+    startLine: 14
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -106,7 +107,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: AUTH_TYPE
     path: ../Butterfly.Auth/UserRefTokenAuthenticator.cs
-    startLine: 15
+    startLine: 16
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -139,7 +140,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: database
     path: ../Butterfly.Auth/UserRefTokenAuthenticator.cs
-    startLine: 17
+    startLine: 18
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -172,7 +173,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: authTokenTableName
     path: ../Butterfly.Auth/UserRefTokenAuthenticator.cs
-    startLine: 18
+    startLine: 19
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -187,33 +188,33 @@ items:
   modifiers.vb:
   - Protected
   - ReadOnly
-- uid: Butterfly.Auth.UserRefTokenAuthenticator.authTokenIdFieldName
-  commentId: F:Butterfly.Auth.UserRefTokenAuthenticator.authTokenIdFieldName
-  id: authTokenIdFieldName
+- uid: Butterfly.Auth.UserRefTokenAuthenticator.authTokenTableIdFieldName
+  commentId: F:Butterfly.Auth.UserRefTokenAuthenticator.authTokenTableIdFieldName
+  id: authTokenTableIdFieldName
   parent: Butterfly.Auth.UserRefTokenAuthenticator
   langs:
   - csharp
   - vb
-  name: authTokenIdFieldName
-  nameWithType: UserRefTokenAuthenticator.authTokenIdFieldName
-  fullName: Butterfly.Auth.UserRefTokenAuthenticator.authTokenIdFieldName
+  name: authTokenTableIdFieldName
+  nameWithType: UserRefTokenAuthenticator.authTokenTableIdFieldName
+  fullName: Butterfly.Auth.UserRefTokenAuthenticator.authTokenTableIdFieldName
   type: Field
   source:
     remote:
       path: Butterfly.Auth/UserRefTokenAuthenticator.cs
       branch: master
       repo: https://github.com/firesharkstudios/butterfly-auth.git
-    id: authTokenIdFieldName
+    id: authTokenTableIdFieldName
     path: ../Butterfly.Auth/UserRefTokenAuthenticator.cs
-    startLine: 19
+    startLine: 20
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
   syntax:
-    content: protected readonly string authTokenIdFieldName
+    content: protected readonly string authTokenTableIdFieldName
     return:
       type: System.String
-    content.vb: Protected ReadOnly authTokenIdFieldName As String
+    content.vb: Protected ReadOnly authTokenTableIdFieldName As String
   modifiers.csharp:
   - protected
   - readonly
@@ -238,7 +239,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: authTokenTableUserIdFieldName
     path: ../Butterfly.Auth/UserRefTokenAuthenticator.cs
-    startLine: 20
+    startLine: 21
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -271,7 +272,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: authTokenTableExpiresAtFieldName
     path: ../Butterfly.Auth/UserRefTokenAuthenticator.cs
-    startLine: 21
+    startLine: 22
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -304,7 +305,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: userTableName
     path: ../Butterfly.Auth/UserRefTokenAuthenticator.cs
-    startLine: 23
+    startLine: 24
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -313,6 +314,39 @@ items:
     return:
       type: System.String
     content.vb: Protected ReadOnly userTableName As String
+  modifiers.csharp:
+  - protected
+  - readonly
+  modifiers.vb:
+  - Protected
+  - ReadOnly
+- uid: Butterfly.Auth.UserRefTokenAuthenticator.userTableIdFieldName
+  commentId: F:Butterfly.Auth.UserRefTokenAuthenticator.userTableIdFieldName
+  id: userTableIdFieldName
+  parent: Butterfly.Auth.UserRefTokenAuthenticator
+  langs:
+  - csharp
+  - vb
+  name: userTableIdFieldName
+  nameWithType: UserRefTokenAuthenticator.userTableIdFieldName
+  fullName: Butterfly.Auth.UserRefTokenAuthenticator.userTableIdFieldName
+  type: Field
+  source:
+    remote:
+      path: Butterfly.Auth/UserRefTokenAuthenticator.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
+    id: userTableIdFieldName
+    path: ../Butterfly.Auth/UserRefTokenAuthenticator.cs
+    startLine: 25
+  assemblies:
+  - Butterfly.Auth
+  namespace: Butterfly.Auth
+  syntax:
+    content: protected readonly string userTableIdFieldName
+    return:
+      type: System.String
+    content.vb: Protected ReadOnly userTableIdFieldName As String
   modifiers.csharp:
   - protected
   - readonly
@@ -337,7 +371,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: userTableUsernameFieldName
     path: ../Butterfly.Auth/UserRefTokenAuthenticator.cs
-    startLine: 24
+    startLine: 26
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -370,7 +404,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: userTableAccountIdFieldName
     path: ../Butterfly.Auth/UserRefTokenAuthenticator.cs
-    startLine: 25
+    startLine: 27
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -403,7 +437,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: userTableRoleFieldName
     path: ../Butterfly.Auth/UserRefTokenAuthenticator.cs
-    startLine: 26
+    startLine: 28
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -418,16 +452,16 @@ items:
   modifiers.vb:
   - Protected
   - ReadOnly
-- uid: Butterfly.Auth.UserRefTokenAuthenticator.#ctor(Butterfly.Db.IDatabase,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)
-  commentId: M:Butterfly.Auth.UserRefTokenAuthenticator.#ctor(Butterfly.Db.IDatabase,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)
-  id: '#ctor(Butterfly.Db.IDatabase,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)'
+- uid: Butterfly.Auth.UserRefTokenAuthenticator.#ctor(Butterfly.Db.IDatabase,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)
+  commentId: M:Butterfly.Auth.UserRefTokenAuthenticator.#ctor(Butterfly.Db.IDatabase,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)
+  id: '#ctor(Butterfly.Db.IDatabase,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)'
   parent: Butterfly.Auth.UserRefTokenAuthenticator
   langs:
   - csharp
   - vb
-  name: UserRefTokenAuthenticator(IDatabase, String, String, String, String, String, String, String, String)
-  nameWithType: UserRefTokenAuthenticator.UserRefTokenAuthenticator(IDatabase, String, String, String, String, String, String, String, String)
-  fullName: Butterfly.Auth.UserRefTokenAuthenticator.UserRefTokenAuthenticator(Butterfly.Db.IDatabase, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String)
+  name: UserRefTokenAuthenticator(IDatabase, String, String, String, String, String, String, String, String, String)
+  nameWithType: UserRefTokenAuthenticator.UserRefTokenAuthenticator(IDatabase, String, String, String, String, String, String, String, String, String)
+  fullName: Butterfly.Auth.UserRefTokenAuthenticator.UserRefTokenAuthenticator(Butterfly.Db.IDatabase, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String)
   type: Constructor
   source:
     remote:
@@ -436,14 +470,14 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: .ctor
     path: ../Butterfly.Auth/UserRefTokenAuthenticator.cs
-    startLine: 40
+    startLine: 43
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
   summary: "\n\n"
   example: []
   syntax:
-    content: public UserRefTokenAuthenticator(IDatabase database, string authTokenTableName = "auth_token", string authTokenIdFieldName = "id", string authTokenTableUserIdFieldName = "user_id", string authTokenTableExpiresAtFieldName = "expires_at", string userTableName = "user", string userTableUsernameFieldName = "username", string userTableAccountIdFieldName = "account_id", string userTableRoleFieldName = "role")
+    content: public UserRefTokenAuthenticator(IDatabase database, string authTokenTableName = "auth_token", string authTokenTableIdFieldName = "id", string authTokenTableUserIdFieldName = "user_id", string authTokenTableExpiresAtFieldName = "expires_at", string userTableName = "user", string userTableIdFieldName = "id", string userTableUsernameFieldName = "username", string userTableAccountIdFieldName = "account_id", string userTableRoleFieldName = "role")
     parameters:
     - id: database
       type: Butterfly.Db.IDatabase
@@ -451,7 +485,7 @@ items:
     - id: authTokenTableName
       type: System.String
       description: Table name of the auth token table (default is &quot;auth_token&quot;)
-    - id: authTokenIdFieldName
+    - id: authTokenTableIdFieldName
       type: System.String
       description: Field name of the id field on the auth token table (default is &quot;id&quot;)
     - id: authTokenTableUserIdFieldName
@@ -463,6 +497,9 @@ items:
     - id: userTableName
       type: System.String
       description: Table name of the user table (default is &quot;user&quot;)
+    - id: userTableIdFieldName
+      type: System.String
+      description: Field name of the id field on the user table (default is &quot;username&quot;)
     - id: userTableUsernameFieldName
       type: System.String
       description: Field name of the username field on the user table (default is &quot;username&quot;)
@@ -472,7 +509,7 @@ items:
     - id: userTableRoleFieldName
       type: System.String
       description: Field name of the role field on the user table (default is &quot;role&quot;)
-    content.vb: Public Sub New(database As IDatabase, authTokenTableName As String = "auth_token", authTokenIdFieldName As String = "id", authTokenTableUserIdFieldName As String = "user_id", authTokenTableExpiresAtFieldName As String = "expires_at", userTableName As String = "user", userTableUsernameFieldName As String = "username", userTableAccountIdFieldName As String = "account_id", userTableRoleFieldName As String = "role")
+    content.vb: Public Sub New(database As IDatabase, authTokenTableName As String = "auth_token", authTokenTableIdFieldName As String = "id", authTokenTableUserIdFieldName As String = "user_id", authTokenTableExpiresAtFieldName As String = "expires_at", userTableName As String = "user", userTableIdFieldName As String = "id", userTableUsernameFieldName As String = "username", userTableAccountIdFieldName As String = "account_id", userTableRoleFieldName As String = "role")
   overload: Butterfly.Auth.UserRefTokenAuthenticator.#ctor*
   modifiers.csharp:
   - public
@@ -496,7 +533,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: AuthenticateAsync
     path: ../Butterfly.Auth/UserRefTokenAuthenticator.cs
-    startLine: 69
+    startLine: 74
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -540,7 +577,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: InsertAsync
     path: ../Butterfly.Auth/UserRefTokenAuthenticator.cs
-    startLine: 90
+    startLine: 119
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth

@@ -93,14 +93,14 @@
   <h3 id="constructors">Constructors
   </h3>
   <a id="Butterfly_Auth_UserRefTokenAuthenticator__ctor_" data-uid="Butterfly.Auth.UserRefTokenAuthenticator.#ctor*"></a>
-  <h4 id="Butterfly_Auth_UserRefTokenAuthenticator__ctor_Butterfly_Db_IDatabase_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String_" data-uid="Butterfly.Auth.UserRefTokenAuthenticator.#ctor(Butterfly.Db.IDatabase,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">UserRefTokenAuthenticator(IDatabase, String, String, String, String, String, String, String, String)</h4>
+  <h4 id="Butterfly_Auth_UserRefTokenAuthenticator__ctor_Butterfly_Db_IDatabase_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String_" data-uid="Butterfly.Auth.UserRefTokenAuthenticator.#ctor(Butterfly.Db.IDatabase,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">UserRefTokenAuthenticator(IDatabase, String, String, String, String, String, String, String, String, String)</h4>
   <div class="markdown level1 summary">
 
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public UserRefTokenAuthenticator(IDatabase database, string authTokenTableName = &quot;auth_token&quot;, string authTokenIdFieldName = &quot;id&quot;, string authTokenTableUserIdFieldName = &quot;user_id&quot;, string authTokenTableExpiresAtFieldName = &quot;expires_at&quot;, string userTableName = &quot;user&quot;, string userTableUsernameFieldName = &quot;username&quot;, string userTableAccountIdFieldName = &quot;account_id&quot;, string userTableRoleFieldName = &quot;role&quot;)</code></pre>
+    <pre><code class="lang-csharp hljs">public UserRefTokenAuthenticator(IDatabase database, string authTokenTableName = &quot;auth_token&quot;, string authTokenTableIdFieldName = &quot;id&quot;, string authTokenTableUserIdFieldName = &quot;user_id&quot;, string authTokenTableExpiresAtFieldName = &quot;expires_at&quot;, string userTableName = &quot;user&quot;, string userTableIdFieldName = &quot;id&quot;, string userTableUsernameFieldName = &quot;username&quot;, string userTableAccountIdFieldName = &quot;account_id&quot;, string userTableRoleFieldName = &quot;role&quot;)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -124,7 +124,7 @@
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">authTokenIdFieldName</span></td>
+        <td><span class="parametername">authTokenTableIdFieldName</span></td>
         <td>Field name of the id field on the auth token table (default is &quot;id&quot;)</td>
       </tr>
       <tr>
@@ -141,6 +141,11 @@
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">userTableName</span></td>
         <td>Table name of the user table (default is &quot;user&quot;)</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">userTableIdFieldName</span></td>
+        <td>Field name of the id field on the user table (default is &quot;username&quot;)</td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
@@ -183,12 +188,12 @@
       </tr>
     </tbody>
   </table>
-  <h4 id="Butterfly_Auth_UserRefTokenAuthenticator_authTokenIdFieldName" data-uid="Butterfly.Auth.UserRefTokenAuthenticator.authTokenIdFieldName">authTokenIdFieldName</h4>
+  <h4 id="Butterfly_Auth_UserRefTokenAuthenticator_authTokenTableExpiresAtFieldName" data-uid="Butterfly.Auth.UserRefTokenAuthenticator.authTokenTableExpiresAtFieldName">authTokenTableExpiresAtFieldName</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected readonly string authTokenIdFieldName</code></pre>
+    <pre><code class="lang-csharp hljs">protected readonly string authTokenTableExpiresAtFieldName</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -205,12 +210,12 @@
       </tr>
     </tbody>
   </table>
-  <h4 id="Butterfly_Auth_UserRefTokenAuthenticator_authTokenTableExpiresAtFieldName" data-uid="Butterfly.Auth.UserRefTokenAuthenticator.authTokenTableExpiresAtFieldName">authTokenTableExpiresAtFieldName</h4>
+  <h4 id="Butterfly_Auth_UserRefTokenAuthenticator_authTokenTableIdFieldName" data-uid="Butterfly.Auth.UserRefTokenAuthenticator.authTokenTableIdFieldName">authTokenTableIdFieldName</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected readonly string authTokenTableExpiresAtFieldName</code></pre>
+    <pre><code class="lang-csharp hljs">protected readonly string authTokenTableIdFieldName</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -321,6 +326,28 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected readonly string userTableAccountIdFieldName</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="Butterfly_Auth_UserRefTokenAuthenticator_userTableIdFieldName" data-uid="Butterfly.Auth.UserRefTokenAuthenticator.userTableIdFieldName">userTableIdFieldName</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly string userTableIdFieldName</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">

@@ -25,7 +25,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: UserRefToken
     path: ../Butterfly.Auth/UserRefTokenAuthenticator.cs
-    startLine: 101
+    startLine: 130
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -67,7 +67,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: id
     path: ../Butterfly.Auth/UserRefTokenAuthenticator.cs
-    startLine: 102
+    startLine: 131
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -100,7 +100,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: userId
     path: ../Butterfly.Auth/UserRefTokenAuthenticator.cs
-    startLine: 103
+    startLine: 132
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -133,7 +133,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: username
     path: ../Butterfly.Auth/UserRefTokenAuthenticator.cs
-    startLine: 104
+    startLine: 133
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -166,7 +166,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: expiresAt
     path: ../Butterfly.Auth/UserRefTokenAuthenticator.cs
-    startLine: 105
+    startLine: 134
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -199,7 +199,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: .ctor
     path: ../Butterfly.Auth/UserRefTokenAuthenticator.cs
-    startLine: 107
+    startLine: 136
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -242,7 +242,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: FromDict
     path: ../Butterfly.Auth/UserRefTokenAuthenticator.cs
-    startLine: 114
+    startLine: 143
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth

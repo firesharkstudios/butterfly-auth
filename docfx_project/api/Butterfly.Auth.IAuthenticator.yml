@@ -20,7 +20,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: IAuthenticator
     path: ../Butterfly.Auth/IAuthenticator.cs
-    startLine: 6
+    startLine: 3
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -51,7 +51,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: AuthenticateAsync
     path: ../Butterfly.Auth/IAuthenticator.cs
-    startLine: 7
+    startLine: 4
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth

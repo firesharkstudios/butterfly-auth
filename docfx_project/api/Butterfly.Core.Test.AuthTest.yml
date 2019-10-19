@@ -6,8 +6,7 @@ items:
   parent: Butterfly.Core.Test
   children:
   - Butterfly.Core.Test.AuthTest.logger
-  - Butterfly.Core.Test.AuthTest.SimpleAuthTest
-  - Butterfly.Core.Test.AuthTest.TruncateData(IDatabase)
+  - Butterfly.Core.Test.AuthTest.RegistrationTests
   langs:
   - csharp
   - vb
@@ -74,75 +73,38 @@ items:
   - Protected
   - Shared
   - ReadOnly
-- uid: Butterfly.Core.Test.AuthTest.SimpleAuthTest
-  commentId: M:Butterfly.Core.Test.AuthTest.SimpleAuthTest
-  id: SimpleAuthTest
+- uid: Butterfly.Core.Test.AuthTest.RegistrationTests
+  commentId: M:Butterfly.Core.Test.AuthTest.RegistrationTests
+  id: RegistrationTests
   parent: Butterfly.Core.Test.AuthTest
   langs:
   - csharp
   - vb
-  name: SimpleAuthTest()
-  nameWithType: AuthTest.SimpleAuthTest()
-  fullName: Butterfly.Core.Test.AuthTest.SimpleAuthTest()
+  name: RegistrationTests()
+  nameWithType: AuthTest.RegistrationTests()
+  fullName: Butterfly.Core.Test.AuthTest.RegistrationTests()
   type: Method
   source:
     remote:
       path: Butterfly.Auth.Test/AuthTest.cs
       branch: master
       repo: https://github.com/firesharkstudios/butterfly-auth.git
-    id: SimpleAuthTest
+    id: RegistrationTests
     path: ../Butterfly.Auth.Test/AuthTest.cs
     startLine: 19
   assemblies:
   - Butterfly.Auth.Test
   namespace: Butterfly.Core.Test
   syntax:
-    content: public Task SimpleAuthTest()
+    content: public Task RegistrationTests()
     return:
       type: Task
-    content.vb: Public Function SimpleAuthTest As Task
-  overload: Butterfly.Core.Test.AuthTest.SimpleAuthTest*
+    content.vb: Public Function RegistrationTests As Task
+  overload: Butterfly.Core.Test.AuthTest.RegistrationTests*
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-- uid: Butterfly.Core.Test.AuthTest.TruncateData(IDatabase)
-  commentId: M:Butterfly.Core.Test.AuthTest.TruncateData(IDatabase)
-  id: TruncateData(IDatabase)
-  parent: Butterfly.Core.Test.AuthTest
-  langs:
-  - csharp
-  - vb
-  name: TruncateData(IDatabase)
-  nameWithType: AuthTest.TruncateData(IDatabase)
-  fullName: Butterfly.Core.Test.AuthTest.TruncateData(IDatabase)
-  type: Method
-  source:
-    remote:
-      path: Butterfly.Auth.Test/AuthTest.cs
-      branch: master
-      repo: https://github.com/firesharkstudios/butterfly-auth.git
-    id: TruncateData
-    path: ../Butterfly.Auth.Test/AuthTest.cs
-    startLine: 52
-  assemblies:
-  - Butterfly.Auth.Test
-  namespace: Butterfly.Core.Test
-  syntax:
-    content: public static Task TruncateData(IDatabase database)
-    parameters:
-    - id: database
-      type: IDatabase
-    return:
-      type: Task
-    content.vb: Public Shared Function TruncateData(database As IDatabase) As Task
-  overload: Butterfly.Core.Test.AuthTest.TruncateData*
-  modifiers.csharp:
-  - public
-  - static
-  modifiers.vb:
-  - Public
-  - Shared
 references:
 - uid: Butterfly.Core.Test
   commentId: N:Butterfly.Core.Test
@@ -159,25 +121,14 @@ references:
   name: Logger
   nameWithType: Logger
   fullName: Logger
-- uid: Butterfly.Core.Test.AuthTest.SimpleAuthTest*
-  commentId: Overload:Butterfly.Core.Test.AuthTest.SimpleAuthTest
-  name: SimpleAuthTest
-  nameWithType: AuthTest.SimpleAuthTest
-  fullName: Butterfly.Core.Test.AuthTest.SimpleAuthTest
+- uid: Butterfly.Core.Test.AuthTest.RegistrationTests*
+  commentId: Overload:Butterfly.Core.Test.AuthTest.RegistrationTests
+  name: RegistrationTests
+  nameWithType: AuthTest.RegistrationTests
+  fullName: Butterfly.Core.Test.AuthTest.RegistrationTests
 - uid: Task
   isExternal: true
   name: Task
   nameWithType: Task
   fullName: Task
-- uid: Butterfly.Core.Test.AuthTest.TruncateData*
-  commentId: Overload:Butterfly.Core.Test.AuthTest.TruncateData
-  name: TruncateData
-  nameWithType: AuthTest.TruncateData
-  fullName: Butterfly.Core.Test.AuthTest.TruncateData
-- uid: IDatabase
-  commentId: '!:IDatabase'
-  isExternal: true
-  name: IDatabase
-  nameWithType: IDatabase
-  fullName: IDatabase
 shouldSkipMarkup: true

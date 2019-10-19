@@ -107,7 +107,8 @@ Can be initialized like this...
             notifyManager.Queue(resetEmailNotifyMessage.Evaluate(user));
         }
     );</code></pre>
-The following database tables are recommended...
+
+The following database tables are recommended (using MySQL syntax but use any database supported by Butterfly.Db)...
 <pre><code>CREATE TABLE account (
 	id VARCHAR(50) NOT NULL,
     created_at INT NOT NULL,
