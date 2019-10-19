@@ -21,7 +21,7 @@ namespace Butterfly.Core.Test {
         public async Task RegistrationTests() {
             var database = new Butterfly.Db.Memory.MemoryDatabase();
 
-            await database.CreateFromResourceFileAsync(Assembly.GetExecutingAssembly(), "Butterfly.Auth.Test.db.sql");
+            await database.CreateFromResourceFileAsync(Assembly.GetExecutingAssembly(), "Butterfly.Auth.Test.butterfly_auth_test.sql");
             database.SetDefaultValue("id", tableName => Guid.NewGuid().ToString());
             database.SetDefaultValue("created_at", tableName => DateTime.Now.ToUnixTimestamp());
             database.SetDefaultValue("updated_at", tableName => DateTime.Now.ToUnixTimestamp());
