@@ -13,7 +13,6 @@ using NLog;
 using Butterfly.Db;
 using Butterfly.Util;
 using Butterfly.Util.Field;
-using Butterfly.Web;
 using Butterfly.Web.WebApi;
 
 using Dict = System.Collections.Generic.Dictionary<string, object>;
@@ -42,7 +41,8 @@ namespace Butterfly.Auth {
     ///         }
     ///     );
     /// </code>
-    /// The following database tables are recommended...
+    /// 
+    /// The following database tables are recommended (using MySQL syntax but use any database supported by Butterfly.Db)...
     /// <code>
     /// CREATE TABLE account (
     /// 	id VARCHAR(50) NOT NULL,

@@ -2,27 +2,31 @@
 
 > Authenticate clients in C# using Butterfly.Db and Butterfly.Web
 
-## Getting Started
-
-### Install from Nuget
+# Install from Nuget
 
 | Name | Package | Install |
 | --- | --- | --- |
 | Butterfly.Auth | [![nuget](https://img.shields.io/nuget/v/Butterfly.Auth.svg)](https://www.nuget.org/packages/Butterfly.Auth/) | `nuget install Butterfly.Auth` |
 
-### Install from Source Code
+# Install from Source Code
 
 ```git clone https://github.com/firesharkstudios/butterfly-auth```
 
-## Overview
+# Getting Started
 
-Primarily useful to authenticate clients making requests to [Butterfly.Web](https://github.com/firesharkstudios/butterfly-web).
+## Database Structure
 
-## Contributing
+Butterfly.Auth requires [Butterfly.Db](https://github.com/firesharkstudios/butterfly-db) to manage authentication tokens, users, and accounts.
+
+While you can use any database engine supported by [Butterfly.Db](https://github.com/firesharkstudios/butterfly-db), here is the SQL to create the necessary tables in MySQL...
+
+
+
+# Contributing
 
 If you'd like to contribute, please fork the repository and use a feature
 branch. Pull requests are warmly welcome.
 
-## Licensing
+# Licensing
 
 The code is licensed under the [Mozilla Public License 2.0](http://mozilla.org/MPL/2.0/).  
