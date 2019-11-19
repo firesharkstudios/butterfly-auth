@@ -114,8 +114,9 @@ namespace Butterfly.Auth {
 
         protected readonly Func<Dict, Dict> getExtraAccountInfo;
         protected readonly Func<Dict, Dict> getExtraUserInfo;
-        protected readonly Func<string, int, Task> onEmailVerify;
-        protected readonly Func<string, int, Task> onPhoneVerify;
+        protected readonly Func<string, string, Task> onSendEmailVerifyCode;
+        protected readonly Func<string, string, Task> onSendPhoneVerifyCode;
+        protected readonly Func<Dict, Task> onVerified;
 
         protected readonly Func<Dict, Task> onRegisterAccount;
         protected readonly Func<Dict, Task> onRegisterUser;
@@ -133,6 +134,16 @@ namespace Butterfly.Auth {
 
         protected readonly UserRefTokenAuthenticator userRefTokenAuthenticator;
         protected readonly ShareCodeAuthenticator shareCodeAuthenticator;
+
+        protected readonly string sendVerifyTableName;
+        protected readonly int verifyCodeExpiresSeconds;
+        protected readonly string verifyCodeFormat;
+
+        protected readonly static EmailFieldValidator EMAIL_FIELD_VALIDATOR = new EmailFieldValidator("email", false, true);
+        protected readonly static PhoneFieldValidator PHONE_FIELD_VALIDATOR = new PhoneFieldValidator("phone", false);
+
+        protected readonly static Random RANDOM = new Random();
+
 
         /// <summary>
         /// Create an instance of AuthManager
@@ -160,10 +171,14 @@ namespace Butterfly.Auth {
         /// <param name="userTableAccountIdFieldName">Field name of the account id field on the user table (default is "account_id")</param>
         /// <param name="userTableRoleFieldName">Field name of the role field on the user table (default is "role")</param>
         /// <param name="defaultRole">Default value for the role field on a new user</param>
+        /// <param name="sendVerifyTableName"></param>
+        /// <param name="verifyCodeExpiresSeconds"></param>
+        /// <param name="verifyCodeFormat"></param>
         /// <param name="getExtraAccountInfo"></param>
         /// <param name="getExtraUserInfo"></param>
-        /// <param name="onEmailVerify">Callback when <see cref="AuthManager.VerifyAsync(Dict, string, string, Func{string, int, Task})"/> is called with an email address</param>
-        /// <param name="onPhoneVerify">Callback when <see cref="AuthManager.VerifyAsync(Dict, string, string, Func{string, int, Task})"/> is called with a phone number</param>
+        /// <param name="onSendEmailVerifyCode"></param>
+        /// <param name="onSendPhoneVerifyCode"></param>
+        /// <param name="onVerified"></param>
         /// <param name="onRegisterAccount">Callback when a new account is registered</param>
         /// <param name="onRegisterUser">Callback when a new user is registered</param>
         /// <param name="onForgotPassword">Callback when a forgot password request is made</param>
@@ -193,10 +208,16 @@ namespace Butterfly.Auth {
             string userTableAccountIdFieldName = "account_id",
             string userTableRoleFieldName = "role",
             string defaultRole = null,
+
+            string sendVerifyTableName = "send_verify", 
+            int verifyCodeExpiresSeconds = 3600,             
+            string verifyCodeFormat = "###-###",
+
             Func<Dict, Dict> getExtraAccountInfo = null,
             Func<Dict, Dict> getExtraUserInfo = null,
-            Func<string, int, Task> onEmailVerify = null,
-            Func<string, int, Task> onPhoneVerify = null,
+            Func<string, string, Task> onSendEmailVerifyCode = null,
+            Func<string, string, Task> onSendPhoneVerifyCode = null,
+            Func<Dict, Task> onVerified = null,
             Func<Dict, Task> onRegisterAccount = null,
             Func<Dict, Task> onRegisterUser = null,
             Func<Dict, Task> onForgotPassword = null,
@@ -233,10 +254,12 @@ namespace Butterfly.Auth {
 
             this.getExtraAccountInfo = getExtraAccountInfo;
             this.getExtraUserInfo = getExtraUserInfo;
-            this.onEmailVerify = onEmailVerify;
-            this.onPhoneVerify = onPhoneVerify;
+
             this.onRegisterAccount = onRegisterAccount;
             this.onRegisterUser = onRegisterUser;
+            this.onSendEmailVerifyCode = onSendEmailVerifyCode;
+            this.onSendPhoneVerifyCode = onSendPhoneVerifyCode;
+            this.onVerified = onVerified;
             this.onForgotPassword = onForgotPassword;
             this.onForgotUsername = onForgotUsername;
             this.onCheckVersion = onCheckVersion;
@@ -246,6 +269,10 @@ namespace Butterfly.Auth {
             this.nameFieldValidator = new TextFieldValidator(this.userTableLastNameFieldName, allowNull: false, maxLength: 25);
             this.emailFieldValidator = new EmailFieldValidator(this.userTableEmailFieldName, allowNull: true);
             this.phoneFieldValidator = new PhoneFieldValidator(this.userTablePhoneFieldName, allowNull: false);
+
+            this.sendVerifyTableName = sendVerifyTableName;
+            this.verifyCodeExpiresSeconds = verifyCodeExpiresSeconds;
+            this.verifyCodeFormat = verifyCodeFormat;
 
             this.userRefTokenAuthenticator = new UserRefTokenAuthenticator(
                 database,
@@ -283,8 +310,7 @@ namespace Butterfly.Auth {
         ///     POST /api/auth/login
         ///     POST /api/auth/forgot-password
         ///     POST /api/auth/reset-password
-        ///     POST /api/auth/verify-email
-        ///     POST /api/auth/verify-phone
+        ///     POST /api/auth/verify
         /// </code>
         /// </remarks>
         /// <param name="webApi"></param>
@@ -345,48 +371,154 @@ namespace Butterfly.Auth {
                 await this.ForgotUsernameAsync(contact);
             });
 
-            webApi.OnPost($"{pathPrefix}/verify-email", async (req, res) => {
-                Dict data = await req.ParseAsJsonAsync<Dict>();
-                await this.VerifyAsync(data, "email", "email_verified_at", this.onEmailVerify);
+            webApi.OnPost($"{pathPrefix}/send-email-verify-code", async (req, res) => {
+                UserRefToken userRefToken = await this.GetUserRefToken(req);
+
+                string email = await this.database.SelectValueAsync<string>("SELECT email FROM user", vars: userRefToken.userId);
+                await this.SendVerifyCodeAsync(email);
             });
 
-            webApi.OnPost($"{pathPrefix}/verify-phone", async (req, res) => {
+            webApi.OnPost($"{pathPrefix}/send-phone-verify-code", async (req, res) => {
+                UserRefToken userRefToken = await this.GetUserRefToken(req);
+
+                string phone = await this.database.SelectValueAsync<string>("SELECT phone FROM user", vars: userRefToken.userId);
+                await this.SendVerifyCodeAsync(phone);
+            });
+
+
+            webApi.OnPost($"{pathPrefix}/verify", async (req, res) => {
                 Dict data = await req.ParseAsJsonAsync<Dict>();
-                await this.VerifyAsync(data, "phone", "phone_verified_at", this.onPhoneVerify);
+                await this.VerifyAsync(data);
             });
         }
 
+        public async Task SendVerifyCodeAsync(string contact) {
+            logger.Debug($"SendVerifyCodeAsync():contact={contact}");
+
+            // Scrub contact
+            string scrubbedContact = Validate(contact);
+            logger.Debug($"SendVerifyCodeAsync():scrubbedContact={scrubbedContact}");
+
+            // Generate code and expires at
+            int digits = this.verifyCodeFormat.Count(x => x == '#');
+            int min = (int)Math.Pow(10, digits - 1);
+            int max = (int)Math.Pow(10, digits) - 1;
+            int code = RANDOM.Next(0, max - min) + min;
+            logger.Debug($"SendVerifyCodeAsync():digits={digits},min={min},max={max},code={code}");
+            DateTime expiresAt = DateTime.Now.AddSeconds(this.verifyCodeExpiresSeconds);
+
+            // Insert/update database
+            string id = await this.database.SelectValueAsync<string>($"SELECT id FROM {this.sendVerifyTableName}", new {
+                contact = scrubbedContact
+            });
+
+            using (ITransaction transaction = await this.database.BeginTransactionAsync()) {
+                if (id == null) {
+                    await transaction.InsertAsync<string>(this.sendVerifyTableName, new {
+                        contact = scrubbedContact,
+                        verify_code = code,
+                        expires_at = expiresAt,
+                    });
+                }
+                else {
+                    await transaction.UpdateAsync(this.sendVerifyTableName, new {
+                        id,
+                        verify_code = code,
+                        expires_at = expiresAt,
+                    });
+                }
+
+                var codeText = code.ToString(this.verifyCodeFormat);
+                if (scrubbedContact.Contains("@")) {
+                    await this.onSendEmailVerifyCode(scrubbedContact, codeText);
+                }
+                else {
+                    await this.onSendPhoneVerifyCode(scrubbedContact, codeText);
+                }
+
+                await transaction.CommitAsync();
+            }
+        }
+
+        public async Task VerifyAsync(Dict data) {
+            if (!data.ContainsKey("email") && !data.ContainsKey("phone")) throw new Exception("Must specify an email or phone verify code");
+
+            string userId = data.GetAs("user_id", "");
+            if (string.IsNullOrEmpty(userId)) throw new Exception("Must specify a user id");
+            Dict user = await this.database.SelectRowAsync($"SELECT {this.userTableEmailFieldName}, {this.userTablePhoneFieldName} FROM {this.userTableName}", userId);
+            if (user == null) throw new Exception($"Invalid user id '{userId}'");
+
+            var updateValues = new Dict {
+                { this.userTableIdFieldName, userId },
+            };
+
+            int emailVerifyCode = data.GetAs("email", -1);
+            if (emailVerifyCode > 0) {
+                var email = user.GetAs(this.userTableEmailFieldName, "");
+                await this.VerifyAsync(email, emailVerifyCode);
+                updateValues[this.userTableEmailVerifiedAtFieldName] = DateTime.Now;
+            }
+
+            int phoneVerifyCode = data.GetAs("phone", -1);
+            if (phoneVerifyCode > 0) {
+                var phone = user.GetAs(this.userTablePhoneFieldName, "");
+                await this.VerifyAsync(phone, phoneVerifyCode);
+                updateValues[this.userTablePhoneVerifiedAtFieldName] = DateTime.Now;
+            }
+
+            await database.UpdateAndCommitAsync(this.userTableName, updateValues);
+
+            if (this.onVerified != null) this.onVerified(data);
+        }
+
+        /*
         /// <summary>
         /// Call to verify a user's email or phone
         /// </summary>
-        /// <param name="data"></param>
-        /// <param name="fieldName"></param>
+        /// <param name="transaction"></param>
+        /// <param name="userId"></param>
+        /// <param name="verifyCode"></param>
+        /// <param name="verifyCodeFieldName"></param>
         /// <param name="verifiedAtFieldName"></param>
-        /// <param name="onVerify"></param>
         /// <returns></returns>
-        public async Task VerifyAsync(Dict data, string fieldName, string verifiedAtFieldName, Func<string, int, Task> onVerify) {
-            string contact = data.GetAs("contact", (string)null);
-            if (string.IsNullOrEmpty(contact)) throw new Exception($"Must specify contact to verify {fieldName}");
+        public async Task VerifyAsync(ITransaction transaction, string userId, int verifyCode, string verifyCodeFieldName, string verifiedAtFieldName) {
 
-            int code = data.GetAs("verify_code", -1);
-            if (code == -1) throw new Exception($"Must specify code to verify {fieldName}");
-
-            string id = data.GetAs("id", (string)null);
-            if (string.IsNullOrEmpty(id)) throw new Exception($"Must specify id to verify {fieldName}");
-
-            string storedContact = await this.database.SelectValueAsync<string>($"SELECT {fieldName} FROM {this.userTableName}", new {
-                id
+            Dict data = await this.database.SelectRowAsync($"SELECT verify_code, expires_at FROM {this.sendVerifyTableName}", new {
+                contact
             });
-            if (storedContact != contact) throw new Exception("Verified contact does not match stored contact");
-
-            await this.onEmailVerify(contact, code);
+            if (userVerifyCode != verifyCode) throw new Exception("Verify code is incorrect");
 
             var values = new Dict {
-                { "id", id },
+                { this.userTableIdFieldName, userId },
                 { verifiedAtFieldName, DateTime.Now }
             };
-            await this.database.UpdateAndCommitAsync("user", values);
+            await transaction.UpdateAsync(this.userTableName, values);
         }
+        */
+        
+        protected async Task VerifyAsync(string contact, int code) {
+            logger.Debug($"VerifyAsync():contact={contact},code={code}");
+            string scrubbedContact = Validate(contact);
+            Dict result = await this.database.SelectRowAsync($"SELECT verify_code, expires_at FROM {this.sendVerifyTableName}", new {
+                contact = scrubbedContact
+            });
+            int verifyCode = result.GetAs("verify_code", -1);
+            if (code == -1 || code != verifyCode) throw new Exception("Invalid contact and/or verify code");
+
+            int expiresAtUnix = result.GetAs("expires_at", -1);
+            if (DateTimeX.FromUnixTimestamp(expiresAtUnix) < DateTime.Now) throw new Exception("Expired verify code");
+        }
+
+        protected static string Validate(string value) {
+            logger.Debug($"Validate():value={value}");
+            if (value.Contains("@")) {
+                return EMAIL_FIELD_VALIDATOR.Validate(value);
+            }
+            else {
+                return PHONE_FIELD_VALIDATOR.Validate(value);
+            }
+        }
+
 
         /// <summary>
         /// Registers a new user
@@ -397,24 +529,26 @@ namespace Butterfly.Auth {
         public async Task<UserRefToken> RegisterAsync(dynamic input, Dict notifyData = null) {
             Dict registration = this.ConvertInputToDict(input);
 
-            // Handle registering an anonymous user
-            string userId = registration.GetAs("user_id", (string)null);
-            string accountId = null;
-            logger.Trace($"RegisterAsync():userId={userId}");
-            if (!string.IsNullOrEmpty(userId)) {
-                accountId = await this.database.SelectValueAsync<string>($"SELECT account_id FROM {this.userTableName}", userId);
-            }
-            if (string.IsNullOrEmpty(accountId)) {
-                userId = null;
+            // Lookup existing user, account, and username
+            string existingUserId = registration.GetAs("user_id", (string)null);
+            string existingAccountId = null;
+            string existingUsername = null;
+            logger.Trace($"RegisterAsync():existingUserId={existingUserId}");
+            if (!string.IsNullOrEmpty(existingUserId)) {
+                Dict row = await this.database.SelectRowAsync($"SELECT {this.userTableAccountIdFieldName}, {this.userTableUsernameFieldName} FROM {this.userTableName}", existingUserId);
+                existingAccountId = row.GetAs(this.userTableAccountIdFieldName, "");
+                existingUsername = row.GetAs(this.userTableUsernameFieldName, "");
             }
 
             // Validate username
             string username = this.usernameFieldValidator.Validate(registration?.GetAs(this.userTableUsernameFieldName, (string)null));
             logger.Trace($"RegisterAsync():username={username}");
-            Dict existingUserByUsername = await this.database.SelectRowAsync(this.userTableName, new Dict {
-                { this.userTableUsernameFieldName, username }
-            });
-            if (existingUserByUsername != null) throw new Exception("Username '" + username + "' is unavailable");
+            if (username != existingUsername) {
+                Dict existingUserByUsername = await this.database.SelectRowAsync(this.userTableName, new Dict {
+                    { this.userTableUsernameFieldName, username }
+                });
+                if (existingUserByUsername != null) throw new Exception("Username '" + username + "' is unavailable");
+            }
 
             // Validate password
             string password = this.passwordFieldValidator.Validate(registration?.GetAs("password", (string)null));
@@ -434,13 +568,14 @@ namespace Butterfly.Auth {
             string passwordHash = $"{salt} {password}".Hash();
 
             // Create account
+            string accountId;
             using (ITransaction transaction = await this.database.BeginTransactionAsync()) {
-                if (string.IsNullOrEmpty(accountId)) {
-                    Dict extraAccountInfo = this.getExtraAccountInfo == null ? null : this.getExtraAccountInfo(registration);
+                if (string.IsNullOrEmpty(existingAccountId)) {
+                    var extraAccountInfo = this.getExtraAccountInfo == null ? null : this.getExtraAccountInfo(registration);
                     accountId = await transaction.InsertAsync<string>(this.accountTableName, extraAccountInfo);
                     if (this.onRegisterAccount != null) {
                         Dict registerAccount = new Dict(extraAccountInfo) {
-                            ["id"] = accountId
+                            [this.accountTableIdFieldName] = accountId
                         };
                         transaction.OnCommit(async() => {
                             try {
@@ -452,18 +587,21 @@ namespace Butterfly.Auth {
                         });
                     }
                 }
+                else {
+                    accountId = existingAccountId;
+                }
 
                 // Create user record
                 Dict user = new Dict {
-                { this.userTableAccountIdFieldName, accountId },
-                { this.userTableUsernameFieldName, username },
-                { this.userTableSaltFieldName, salt },
-                { this.userTablePasswordHashFieldName, passwordHash },
-                { this.userTableEmailFieldName, email },
-                { this.userTablePhoneFieldName, phone },
-                { this.userTableFirstNameFieldName, firstName  },
-                { this.userTableLastNameFieldName, lastName },
-            };
+                    { this.userTableAccountIdFieldName, accountId },
+                    { this.userTableUsernameFieldName, username },
+                    { this.userTableSaltFieldName, salt },
+                    { this.userTablePasswordHashFieldName, passwordHash },
+                    { this.userTableEmailFieldName, email },
+                    { this.userTablePhoneFieldName, phone },
+                    { this.userTableFirstNameFieldName, firstName  },
+                    { this.userTableLastNameFieldName, lastName },
+                };
                 if (!string.IsNullOrEmpty(this.userTableRoleFieldName) && !string.IsNullOrEmpty(this.defaultRole)) {
                     user[this.userTableRoleFieldName] = role;
                 }
@@ -471,10 +609,13 @@ namespace Butterfly.Auth {
                 if (extraUserInfo != null) {
                     user.UpdateFrom(extraUserInfo);
                 }
-                if (string.IsNullOrEmpty(userId)) {
+
+                string userId;
+                if (string.IsNullOrEmpty(existingUserId)) {
                     userId = await transaction.InsertAsync<string>(this.userTableName, user);
                 }
                 else {
+                    userId = existingUserId;
                     user[this.userTableIdFieldName] = userId;
                     await transaction.UpdateAsync(this.userTableName, user);
                 }
