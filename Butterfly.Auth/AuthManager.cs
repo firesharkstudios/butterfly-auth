@@ -118,8 +118,7 @@ namespace Butterfly.Auth {
         protected readonly Func<string, string, Task> onSendPhoneVerifyCode;
         protected readonly Func<Dict, Task> onVerified;
 
-        protected readonly Func<Dict, Task> onRegisterAccount;
-        protected readonly Func<Dict, Task> onRegisterUser;
+        protected readonly Func<bool, Dict, Task> onRegister;
         protected readonly Func<Dict, Task> onForgotPassword;
         protected readonly Func<Dict, Task> onForgotUsername;
         protected readonly Action<Version> onCheckVersion;
@@ -180,7 +179,7 @@ namespace Butterfly.Auth {
         /// <param name="onSendPhoneVerifyCode"></param>
         /// <param name="onVerified"></param>
         /// <param name="onRegisterAccount">Callback when a new account is registered</param>
-        /// <param name="onRegisterUser">Callback when a new user is registered</param>
+        /// <param name="onRegister">Callback when a new user is registered</param>
         /// <param name="onForgotPassword">Callback when a forgot password request is made</param>
         /// <param name="onForgotUsername">Callback when a forgot username request is made</param>
         /// <param name="onCheckVersion"></param>
@@ -218,8 +217,7 @@ namespace Butterfly.Auth {
             Func<string, string, Task> onSendEmailVerifyCode = null,
             Func<string, string, Task> onSendPhoneVerifyCode = null,
             Func<Dict, Task> onVerified = null,
-            Func<Dict, Task> onRegisterAccount = null,
-            Func<Dict, Task> onRegisterUser = null,
+            Func<bool, Dict, Task> onRegister = null,
             Func<Dict, Task> onForgotPassword = null,
             Func<Dict, Task> onForgotUsername = null,
             Action<Version> onCheckVersion = null
@@ -255,8 +253,7 @@ namespace Butterfly.Auth {
             this.getExtraAccountInfo = getExtraAccountInfo;
             this.getExtraUserInfo = getExtraUserInfo;
 
-            this.onRegisterAccount = onRegisterAccount;
-            this.onRegisterUser = onRegisterUser;
+            this.onRegister = onRegister;
             this.onSendEmailVerifyCode = onSendEmailVerifyCode;
             this.onSendPhoneVerifyCode = onSendPhoneVerifyCode;
             this.onVerified = onVerified;
@@ -573,19 +570,6 @@ namespace Butterfly.Auth {
                 if (string.IsNullOrEmpty(existingAccountId)) {
                     var extraAccountInfo = this.getExtraAccountInfo == null ? null : this.getExtraAccountInfo(registration);
                     accountId = await transaction.InsertAsync<string>(this.accountTableName, extraAccountInfo);
-                    if (this.onRegisterAccount != null) {
-                        Dict registerAccount = new Dict(extraAccountInfo) {
-                            [this.accountTableIdFieldName] = accountId
-                        };
-                        transaction.OnCommit(async() => {
-                            try {
-                                await this.onRegisterAccount(registerAccount);
-                            }
-                            catch (Exception e) {
-                                logger.Debug(e);
-                            }
-                        });
-                    }
                 }
                 else {
                     accountId = existingAccountId;
@@ -620,9 +604,10 @@ namespace Butterfly.Auth {
                     await transaction.UpdateAsync(this.userTableName, user);
                 }
 
-                if (this.onRegisterUser != null) {
+                if (this.onRegister != null) {
                     transaction.OnCommit(async () => {
                         var registerUser = new Dict {
+                            { this.userTableIdFieldName, userId },
                             { this.userTableAccountIdFieldName, accountId },
                             { this.userTableUsernameFieldName, username },
                             { this.userTableEmailFieldName, email },
@@ -630,9 +615,9 @@ namespace Butterfly.Auth {
                             { this.userTableFirstNameFieldName, firstName  },
                             { this.userTableLastNameFieldName, lastName },
                         };
+                        if (notifyData != null) registerUser.UpdateFrom(notifyData);
                         try {
-                            if (notifyData != null) registerUser.UpdateFrom(notifyData);
-                            await this.onRegisterUser(registerUser);
+                            await this.onRegister(string.IsNullOrEmpty(existingAccountId), registerUser);
                         }
                         catch (Exception e) {
                             logger.Debug(e);
