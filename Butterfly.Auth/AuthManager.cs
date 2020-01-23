@@ -87,8 +87,8 @@ namespace Butterfly.Auth {
         protected readonly IDatabase database;
 
         protected readonly int authTokenDurationDays;
-        protected readonly int resetCodeLength;
         protected readonly int resetTokenDurationMinutes;
+        protected readonly string resetCodeFormat;
 
         protected readonly string accountTableName;
         protected readonly string accountTableIdFieldName;
@@ -168,8 +168,8 @@ namespace Butterfly.Auth {
         /// <param name="userTableResetCodeFieldName">Field name of the reset code field on the user table (default is "reset_code")</param>
         /// <param name="userTableResetCodeExpiresAtFieldName">Field name of the reset code expires at field on the user table (default is "reset_code_expires_at")</param>
         /// <param name="userTableAccountIdFieldName">Field name of the account id field on the user table (default is "account_id")</param>
-        /// <param name="userTableRoleFieldName">Field name of the role field on the user table (default is "role")</param>
-        /// <param name="defaultRole">Default value for the role field on a new user</param>
+        /// <param name="userTableUserRoleFieldName">Field name of the role field on the user table (default is "role")</param>
+        /// <param name="defaultUserRole">Default value for the role field on a new user</param>
         /// <param name="sendVerifyTableName"></param>
         /// <param name="verifyCodeExpiresSeconds"></param>
         /// <param name="verifyCodeFormat"></param>
@@ -188,6 +188,7 @@ namespace Butterfly.Auth {
             int authTokenDurationDays = 90,
             int resetCodeLength = 6,
             int resetTokenDurationMinutes = 90,
+            string resetCodeFormat = "###-###",
             string accountTableName = "account",
             string accountTableIdFieldName = "id",
             string accountTableShareCodeFieldName = "share_code",
@@ -205,8 +206,8 @@ namespace Butterfly.Auth {
             string userTableResetCodeFieldName = "reset_code",
             string userTableResetCodeExpiresAtFieldName = "reset_code_expires_at",
             string userTableAccountIdFieldName = "account_id",
-            string userTableRoleFieldName = "role",
-            string defaultRole = null,
+            string userTableUserRoleFieldName = "user_role",
+            string defaultUserRole = null,
 
             string sendVerifyTableName = "send_verify", 
             int verifyCodeExpiresSeconds = 3600,             
@@ -225,8 +226,8 @@ namespace Butterfly.Auth {
             this.database = database;
 
             this.authTokenDurationDays = authTokenDurationDays;
-            this.resetCodeLength = resetCodeLength;
             this.resetTokenDurationMinutes = resetTokenDurationMinutes;
+            this.resetCodeFormat = resetCodeFormat;
 
             this.accountTableName = accountTableName;
             this.accountTableIdFieldName = accountTableIdFieldName;
@@ -246,9 +247,9 @@ namespace Butterfly.Auth {
             this.userTableResetCodeFieldName = userTableResetCodeFieldName;
             this.userTableResetCodeExpiresAtFieldName = userTableResetCodeExpiresAtFieldName;
             this.userTableAccountIdFieldName = userTableAccountIdFieldName;
-            this.userTableRoleFieldName = userTableRoleFieldName;
+            this.userTableRoleFieldName = userTableUserRoleFieldName;
 
-            this.defaultRole = defaultRole;
+            this.defaultRole = defaultUserRole;
 
             this.getExtraAccountInfo = getExtraAccountInfo;
             this.getExtraUserInfo = getExtraUserInfo;
@@ -389,6 +390,15 @@ namespace Butterfly.Auth {
             });
         }
 
+        static int GetRandomCode(string format) {
+            int digits = format.Count(x => x == '#');
+            int min = (int)Math.Pow(10, digits - 1);
+            int max = (int)Math.Pow(10, digits) - 1;
+            int code = RANDOM.Next(0, max - min) + min;
+            logger.Debug($"GetRandomCode():digits={digits},min={min},max={max},code={code}");
+            return code;
+        }
+
         public async Task SendVerifyCodeAsync(string contact) {
             logger.Debug($"SendVerifyCodeAsync():contact={contact}");
 
@@ -397,11 +407,7 @@ namespace Butterfly.Auth {
             logger.Debug($"SendVerifyCodeAsync():scrubbedContact={scrubbedContact}");
 
             // Generate code and expires at
-            int digits = this.verifyCodeFormat.Count(x => x == '#');
-            int min = (int)Math.Pow(10, digits - 1);
-            int max = (int)Math.Pow(10, digits) - 1;
-            int code = RANDOM.Next(0, max - min) + min;
-            logger.Debug($"SendVerifyCodeAsync():digits={digits},min={min},max={max},code={code}");
+            int code = GetRandomCode(this.verifyCodeFormat);
             DateTime expiresAt = DateTime.Now.AddSeconds(this.verifyCodeExpiresSeconds);
 
             // Insert/update database
@@ -756,8 +762,8 @@ namespace Butterfly.Auth {
             if (user == null) throw new Exception("Invalid username '" + username + "'");
 
             string userId = user.GetAs(this.userTableIdFieldName, (string)null);
-            string resetCode = await this.CreateResetCodeAsync(userId);
-            user[this.userTableResetCodeFieldName] = resetCode;
+            int resetCode = await this.CreateResetCodeAsync(userId);
+            user[this.userTableResetCodeFieldName] = resetCode.ToString(this.resetCodeFormat);
 
             if (this.onForgotPassword != null) this.onForgotPassword(user);
         }
@@ -828,11 +834,9 @@ namespace Butterfly.Auth {
             });
         }
 
-        protected async Task<string> CreateResetCodeAsync(string userId) {
-            Random random = new Random();
-            int resetCodeMax = (int)Math.Pow(10, this.resetCodeLength);
-            long randomResetCode = random.Next(resetCodeMax);
-            var resetCode = randomResetCode.ToString(String.Concat(Enumerable.Repeat("0", this.resetCodeLength)));
+        protected async Task<int> CreateResetCodeAsync(string userId) {
+            var resetCode = GetRandomCode(this.resetCodeFormat);
+            //var resetCode = randomResetCode.ToString(this.resetCodeFormat);
 
             DateTime expiresAt = DateTime.Now.AddMinutes(this.resetTokenDurationMinutes);
             await this.database.UpdateAndCommitAsync(this.userTableName, new Dict {
