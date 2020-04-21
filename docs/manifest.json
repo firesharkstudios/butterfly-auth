@@ -9,7 +9,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Butterfly.Auth.AuthManager.html",
-          "hash": "i34Rcnc/srG1uTqm/PTXIQ=="
+          "hash": "pO9hUv/e5wkgKyp6abLz9g=="
         }
       },
       "is_incremental": false,
@@ -199,11 +199,12 @@
           "total_file_count": 0,
           "skipped_file_count": 0
         },
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": true,
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build",
-          "total_file_count": 10,
-          "skipped_file_count": 8
+          "total_file_count": 0,
+          "skipped_file_count": 0
         },
         "ConceptualDocumentProcessor": {
           "can_incremental": true,
@@ -211,12 +212,11 @@
           "total_file_count": 2,
           "skipped_file_count": 2
         },
-        "TocDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 0,
-          "skipped_file_count": 0
+          "total_file_count": 10,
+          "skipped_file_count": 8
         }
       }
     },

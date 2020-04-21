@@ -23,7 +23,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: AuthToken
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 889
+    startLine: 878
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -65,7 +65,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: type
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 890
+    startLine: 879
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -98,7 +98,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: accountId
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 891
+    startLine: 880
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -131,7 +131,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: role
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 892
+    startLine: 881
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -164,7 +164,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: .ctor
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 894
+    startLine: 883
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth

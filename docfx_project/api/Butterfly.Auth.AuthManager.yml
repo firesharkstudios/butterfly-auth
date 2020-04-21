@@ -5,7 +5,7 @@ items:
   id: AuthManager
   parent: Butterfly.Auth
   children:
-  - Butterfly.Auth.AuthManager.#ctor(Butterfly.Db.IDatabase,System.Int32,System.Int32,System.Int32,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Int32,System.String,Func{System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.Object}},Func{System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.Object}},Func{System.String,System.String,Task},Func{System.String,System.String,Task},Func{System.Collections.Generic.Dictionary{System.String,System.Object},Task},Func{System.Collections.Generic.Dictionary{System.String,System.Object},Task},Func{System.Collections.Generic.Dictionary{System.String,System.Object},Task},Func{System.Collections.Generic.Dictionary{System.String,System.Object},Task},Func{System.Collections.Generic.Dictionary{System.String,System.Object},Task},Action{Version})
+  - Butterfly.Auth.AuthManager.#ctor(Butterfly.Db.IDatabase,System.Int32,System.Int32,System.Int32,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Int32,System.String,Func{System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.Object}},Func{System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.Object}},Func{System.String,System.String,Task},Func{System.String,System.String,Task},Func{System.Collections.Generic.Dictionary{System.String,System.Object},Task},Func{System.Boolean,System.Collections.Generic.Dictionary{System.String,System.Object},Task},Func{System.Collections.Generic.Dictionary{System.String,System.Object},Task},Func{System.Collections.Generic.Dictionary{System.String,System.Object},Task},Action{Version})
   - Butterfly.Auth.AuthManager.accountTableIdFieldName
   - Butterfly.Auth.AuthManager.accountTableName
   - Butterfly.Auth.AuthManager.accountTableShareCodeFieldName
@@ -33,8 +33,7 @@ items:
   - Butterfly.Auth.AuthManager.onCheckVersion
   - Butterfly.Auth.AuthManager.onForgotPassword
   - Butterfly.Auth.AuthManager.onForgotUsername
-  - Butterfly.Auth.AuthManager.onRegisterAccount
-  - Butterfly.Auth.AuthManager.onRegisterUser
+  - Butterfly.Auth.AuthManager.onRegister
   - Butterfly.Auth.AuthManager.onSendEmailVerifyCode
   - Butterfly.Auth.AuthManager.onSendPhoneVerifyCode
   - Butterfly.Auth.AuthManager.onVerified
@@ -43,7 +42,7 @@ items:
   - Butterfly.Auth.AuthManager.phoneFieldValidator
   - Butterfly.Auth.AuthManager.RANDOM
   - Butterfly.Auth.AuthManager.RegisterAsync(System.Object,System.Collections.Generic.Dictionary{System.String,System.Object})
-  - Butterfly.Auth.AuthManager.resetCodeLength
+  - Butterfly.Auth.AuthManager.resetCodeFormat
   - Butterfly.Auth.AuthManager.ResetPasswordAsync(System.Collections.Generic.Dictionary{System.String,System.Object})
   - Butterfly.Auth.AuthManager.resetTokenDurationMinutes
   - Butterfly.Auth.AuthManager.SendVerifyCodeAsync(System.String)
@@ -208,39 +207,6 @@ items:
   modifiers.vb:
   - Protected
   - ReadOnly
-- uid: Butterfly.Auth.AuthManager.resetCodeLength
-  commentId: F:Butterfly.Auth.AuthManager.resetCodeLength
-  id: resetCodeLength
-  parent: Butterfly.Auth.AuthManager
-  langs:
-  - csharp
-  - vb
-  name: resetCodeLength
-  nameWithType: AuthManager.resetCodeLength
-  fullName: Butterfly.Auth.AuthManager.resetCodeLength
-  type: Field
-  source:
-    remote:
-      path: Butterfly.Auth/AuthManager.cs
-      branch: master
-      repo: https://github.com/firesharkstudios/butterfly-auth.git
-    id: resetCodeLength
-    path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 89
-  assemblies:
-  - Butterfly.Auth
-  namespace: Butterfly.Auth
-  syntax:
-    content: protected readonly int resetCodeLength
-    return:
-      type: System.Int32
-    content.vb: Protected ReadOnly resetCodeLength As Integer
-  modifiers.csharp:
-  - protected
-  - readonly
-  modifiers.vb:
-  - Protected
-  - ReadOnly
 - uid: Butterfly.Auth.AuthManager.resetTokenDurationMinutes
   commentId: F:Butterfly.Auth.AuthManager.resetTokenDurationMinutes
   id: resetTokenDurationMinutes
@@ -259,7 +225,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: resetTokenDurationMinutes
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 90
+    startLine: 89
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -268,6 +234,39 @@ items:
     return:
       type: System.Int32
     content.vb: Protected ReadOnly resetTokenDurationMinutes As Integer
+  modifiers.csharp:
+  - protected
+  - readonly
+  modifiers.vb:
+  - Protected
+  - ReadOnly
+- uid: Butterfly.Auth.AuthManager.resetCodeFormat
+  commentId: F:Butterfly.Auth.AuthManager.resetCodeFormat
+  id: resetCodeFormat
+  parent: Butterfly.Auth.AuthManager
+  langs:
+  - csharp
+  - vb
+  name: resetCodeFormat
+  nameWithType: AuthManager.resetCodeFormat
+  fullName: Butterfly.Auth.AuthManager.resetCodeFormat
+  type: Field
+  source:
+    remote:
+      path: Butterfly.Auth/AuthManager.cs
+      branch: master
+      repo: https://github.com/firesharkstudios/butterfly-auth.git
+    id: resetCodeFormat
+    path: ../Butterfly.Auth/AuthManager.cs
+    startLine: 90
+  assemblies:
+  - Butterfly.Auth
+  namespace: Butterfly.Auth
+  syntax:
+    content: protected readonly string resetCodeFormat
+    return:
+      type: System.String
+    content.vb: Protected ReadOnly resetCodeFormat As String
   modifiers.csharp:
   - protected
   - readonly
@@ -1066,66 +1065,33 @@ items:
   modifiers.vb:
   - Protected
   - ReadOnly
-- uid: Butterfly.Auth.AuthManager.onRegisterAccount
-  commentId: F:Butterfly.Auth.AuthManager.onRegisterAccount
-  id: onRegisterAccount
+- uid: Butterfly.Auth.AuthManager.onRegister
+  commentId: F:Butterfly.Auth.AuthManager.onRegister
+  id: onRegister
   parent: Butterfly.Auth.AuthManager
   langs:
   - csharp
   - vb
-  name: onRegisterAccount
-  nameWithType: AuthManager.onRegisterAccount
-  fullName: Butterfly.Auth.AuthManager.onRegisterAccount
+  name: onRegister
+  nameWithType: AuthManager.onRegister
+  fullName: Butterfly.Auth.AuthManager.onRegister
   type: Field
   source:
     remote:
       path: Butterfly.Auth/AuthManager.cs
       branch: master
       repo: https://github.com/firesharkstudios/butterfly-auth.git
-    id: onRegisterAccount
+    id: onRegister
     path: ../Butterfly.Auth/AuthManager.cs
     startLine: 120
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
   syntax:
-    content: protected readonly Func<System.Collections.Generic.Dictionary<string, object>, Task> onRegisterAccount
+    content: protected readonly Func<bool, System.Collections.Generic.Dictionary<string, object>, Task> onRegister
     return:
-      type: Func{System.Collections.Generic.Dictionary{System.String,System.Object},Task}
-    content.vb: Protected ReadOnly onRegisterAccount As Func(Of System.Collections.Generic.Dictionary(Of String, Object), Task)
-  modifiers.csharp:
-  - protected
-  - readonly
-  modifiers.vb:
-  - Protected
-  - ReadOnly
-- uid: Butterfly.Auth.AuthManager.onRegisterUser
-  commentId: F:Butterfly.Auth.AuthManager.onRegisterUser
-  id: onRegisterUser
-  parent: Butterfly.Auth.AuthManager
-  langs:
-  - csharp
-  - vb
-  name: onRegisterUser
-  nameWithType: AuthManager.onRegisterUser
-  fullName: Butterfly.Auth.AuthManager.onRegisterUser
-  type: Field
-  source:
-    remote:
-      path: Butterfly.Auth/AuthManager.cs
-      branch: master
-      repo: https://github.com/firesharkstudios/butterfly-auth.git
-    id: onRegisterUser
-    path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 121
-  assemblies:
-  - Butterfly.Auth
-  namespace: Butterfly.Auth
-  syntax:
-    content: protected readonly Func<System.Collections.Generic.Dictionary<string, object>, Task> onRegisterUser
-    return:
-      type: Func{System.Collections.Generic.Dictionary{System.String,System.Object},Task}
-    content.vb: Protected ReadOnly onRegisterUser As Func(Of System.Collections.Generic.Dictionary(Of String, Object), Task)
+      type: Func{System.Boolean,System.Collections.Generic.Dictionary{System.String,System.Object},Task}
+    content.vb: Protected ReadOnly onRegister As Func(Of Boolean, System.Collections.Generic.Dictionary(Of String, Object), Task)
   modifiers.csharp:
   - protected
   - readonly
@@ -1150,7 +1116,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: onForgotPassword
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 122
+    startLine: 121
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -1183,7 +1149,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: onForgotUsername
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 123
+    startLine: 122
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -1216,7 +1182,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: onCheckVersion
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 124
+    startLine: 123
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -1249,7 +1215,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: usernameFieldValidator
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 126
+    startLine: 125
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -1282,7 +1248,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: passwordFieldValidator
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 127
+    startLine: 126
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -1315,7 +1281,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: nameFieldValidator
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 128
+    startLine: 127
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -1348,7 +1314,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: emailFieldValidator
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 129
+    startLine: 128
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -1381,7 +1347,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: phoneFieldValidator
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 130
+    startLine: 129
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -1414,7 +1380,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: authenticatorByType
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 132
+    startLine: 131
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -1447,7 +1413,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: userRefTokenAuthenticator
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 134
+    startLine: 133
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -1480,7 +1446,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: shareCodeAuthenticator
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 135
+    startLine: 134
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -1513,7 +1479,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: sendVerifyTableName
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 137
+    startLine: 136
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -1546,7 +1512,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: verifyCodeExpiresSeconds
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 138
+    startLine: 137
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -1579,7 +1545,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: verifyCodeFormat
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 139
+    startLine: 138
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -1612,7 +1578,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: EMAIL_FIELD_VALIDATOR
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 141
+    startLine: 140
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -1647,7 +1613,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: PHONE_FIELD_VALIDATOR
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 142
+    startLine: 141
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -1682,7 +1648,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: RANDOM
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 144
+    startLine: 143
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -1699,16 +1665,16 @@ items:
   - Protected
   - Shared
   - ReadOnly
-- uid: Butterfly.Auth.AuthManager.#ctor(Butterfly.Db.IDatabase,System.Int32,System.Int32,System.Int32,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Int32,System.String,Func{System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.Object}},Func{System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.Object}},Func{System.String,System.String,Task},Func{System.String,System.String,Task},Func{System.Collections.Generic.Dictionary{System.String,System.Object},Task},Func{System.Collections.Generic.Dictionary{System.String,System.Object},Task},Func{System.Collections.Generic.Dictionary{System.String,System.Object},Task},Func{System.Collections.Generic.Dictionary{System.String,System.Object},Task},Func{System.Collections.Generic.Dictionary{System.String,System.Object},Task},Action{Version})
-  commentId: M:Butterfly.Auth.AuthManager.#ctor(Butterfly.Db.IDatabase,System.Int32,System.Int32,System.Int32,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Int32,System.String,Func{System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.Object}},Func{System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.Object}},Func{System.String,System.String,Task},Func{System.String,System.String,Task},Func{System.Collections.Generic.Dictionary{System.String,System.Object},Task},Func{System.Collections.Generic.Dictionary{System.String,System.Object},Task},Func{System.Collections.Generic.Dictionary{System.String,System.Object},Task},Func{System.Collections.Generic.Dictionary{System.String,System.Object},Task},Func{System.Collections.Generic.Dictionary{System.String,System.Object},Task},Action{Version})
-  id: '#ctor(Butterfly.Db.IDatabase,System.Int32,System.Int32,System.Int32,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Int32,System.String,Func{System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.Object}},Func{System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.Object}},Func{System.String,System.String,Task},Func{System.String,System.String,Task},Func{System.Collections.Generic.Dictionary{System.String,System.Object},Task},Func{System.Collections.Generic.Dictionary{System.String,System.Object},Task},Func{System.Collections.Generic.Dictionary{System.String,System.Object},Task},Func{System.Collections.Generic.Dictionary{System.String,System.Object},Task},Func{System.Collections.Generic.Dictionary{System.String,System.Object},Task},Action{Version})'
+- uid: Butterfly.Auth.AuthManager.#ctor(Butterfly.Db.IDatabase,System.Int32,System.Int32,System.Int32,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Int32,System.String,Func{System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.Object}},Func{System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.Object}},Func{System.String,System.String,Task},Func{System.String,System.String,Task},Func{System.Collections.Generic.Dictionary{System.String,System.Object},Task},Func{System.Boolean,System.Collections.Generic.Dictionary{System.String,System.Object},Task},Func{System.Collections.Generic.Dictionary{System.String,System.Object},Task},Func{System.Collections.Generic.Dictionary{System.String,System.Object},Task},Action{Version})
+  commentId: M:Butterfly.Auth.AuthManager.#ctor(Butterfly.Db.IDatabase,System.Int32,System.Int32,System.Int32,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Int32,System.String,Func{System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.Object}},Func{System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.Object}},Func{System.String,System.String,Task},Func{System.String,System.String,Task},Func{System.Collections.Generic.Dictionary{System.String,System.Object},Task},Func{System.Boolean,System.Collections.Generic.Dictionary{System.String,System.Object},Task},Func{System.Collections.Generic.Dictionary{System.String,System.Object},Task},Func{System.Collections.Generic.Dictionary{System.String,System.Object},Task},Action{Version})
+  id: '#ctor(Butterfly.Db.IDatabase,System.Int32,System.Int32,System.Int32,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Int32,System.String,Func{System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.Object}},Func{System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.Object}},Func{System.String,System.String,Task},Func{System.String,System.String,Task},Func{System.Collections.Generic.Dictionary{System.String,System.Object},Task},Func{System.Boolean,System.Collections.Generic.Dictionary{System.String,System.Object},Task},Func{System.Collections.Generic.Dictionary{System.String,System.Object},Task},Func{System.Collections.Generic.Dictionary{System.String,System.Object},Task},Action{Version})'
   parent: Butterfly.Auth.AuthManager
   langs:
   - csharp
   - vb
-  name: AuthManager(IDatabase, Int32, Int32, Int32, String, String, String, String, String, String, String, String, String, String, String, String, String, String, String, String, String, String, String, String, Int32, String, Func<System.Collections.Generic.Dictionary<String, Object>, System.Collections.Generic.Dictionary<String, Object>>, Func<System.Collections.Generic.Dictionary<String, Object>, System.Collections.Generic.Dictionary<String, Object>>, Func<String, String, Task>, Func<String, String, Task>, Func<System.Collections.Generic.Dictionary<String, Object>, Task>, Func<System.Collections.Generic.Dictionary<String, Object>, Task>, Func<System.Collections.Generic.Dictionary<String, Object>, Task>, Func<System.Collections.Generic.Dictionary<String, Object>, Task>, Func<System.Collections.Generic.Dictionary<String, Object>, Task>, Action<Version>)
-  nameWithType: AuthManager.AuthManager(IDatabase, Int32, Int32, Int32, String, String, String, String, String, String, String, String, String, String, String, String, String, String, String, String, String, String, String, String, Int32, String, Func<System.Collections.Generic.Dictionary<String, Object>, System.Collections.Generic.Dictionary<String, Object>>, Func<System.Collections.Generic.Dictionary<String, Object>, System.Collections.Generic.Dictionary<String, Object>>, Func<String, String, Task>, Func<String, String, Task>, Func<System.Collections.Generic.Dictionary<String, Object>, Task>, Func<System.Collections.Generic.Dictionary<String, Object>, Task>, Func<System.Collections.Generic.Dictionary<String, Object>, Task>, Func<System.Collections.Generic.Dictionary<String, Object>, Task>, Func<System.Collections.Generic.Dictionary<String, Object>, Task>, Action<Version>)
-  fullName: Butterfly.Auth.AuthManager.AuthManager(Butterfly.Db.IDatabase, System.Int32, System.Int32, System.Int32, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.Int32, System.String, Func<System.Collections.Generic.Dictionary<System.String, System.Object>, System.Collections.Generic.Dictionary<System.String, System.Object>>, Func<System.Collections.Generic.Dictionary<System.String, System.Object>, System.Collections.Generic.Dictionary<System.String, System.Object>>, Func<System.String, System.String, Task>, Func<System.String, System.String, Task>, Func<System.Collections.Generic.Dictionary<System.String, System.Object>, Task>, Func<System.Collections.Generic.Dictionary<System.String, System.Object>, Task>, Func<System.Collections.Generic.Dictionary<System.String, System.Object>, Task>, Func<System.Collections.Generic.Dictionary<System.String, System.Object>, Task>, Func<System.Collections.Generic.Dictionary<System.String, System.Object>, Task>, Action<Version>)
+  name: AuthManager(IDatabase, Int32, Int32, Int32, String, String, String, String, String, String, String, String, String, String, String, String, String, String, String, String, String, String, String, String, String, Int32, String, Func<System.Collections.Generic.Dictionary<String, Object>, System.Collections.Generic.Dictionary<String, Object>>, Func<System.Collections.Generic.Dictionary<String, Object>, System.Collections.Generic.Dictionary<String, Object>>, Func<String, String, Task>, Func<String, String, Task>, Func<System.Collections.Generic.Dictionary<String, Object>, Task>, Func<Boolean, System.Collections.Generic.Dictionary<String, Object>, Task>, Func<System.Collections.Generic.Dictionary<String, Object>, Task>, Func<System.Collections.Generic.Dictionary<String, Object>, Task>, Action<Version>)
+  nameWithType: AuthManager.AuthManager(IDatabase, Int32, Int32, Int32, String, String, String, String, String, String, String, String, String, String, String, String, String, String, String, String, String, String, String, String, String, Int32, String, Func<System.Collections.Generic.Dictionary<String, Object>, System.Collections.Generic.Dictionary<String, Object>>, Func<System.Collections.Generic.Dictionary<String, Object>, System.Collections.Generic.Dictionary<String, Object>>, Func<String, String, Task>, Func<String, String, Task>, Func<System.Collections.Generic.Dictionary<String, Object>, Task>, Func<Boolean, System.Collections.Generic.Dictionary<String, Object>, Task>, Func<System.Collections.Generic.Dictionary<String, Object>, Task>, Func<System.Collections.Generic.Dictionary<String, Object>, Task>, Action<Version>)
+  fullName: Butterfly.Auth.AuthManager.AuthManager(Butterfly.Db.IDatabase, System.Int32, System.Int32, System.Int32, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.Int32, System.String, Func<System.Collections.Generic.Dictionary<System.String, System.Object>, System.Collections.Generic.Dictionary<System.String, System.Object>>, Func<System.Collections.Generic.Dictionary<System.String, System.Object>, System.Collections.Generic.Dictionary<System.String, System.Object>>, Func<System.String, System.String, Task>, Func<System.String, System.String, Task>, Func<System.Collections.Generic.Dictionary<System.String, System.Object>, Task>, Func<System.Boolean, System.Collections.Generic.Dictionary<System.String, System.Object>, Task>, Func<System.Collections.Generic.Dictionary<System.String, System.Object>, Task>, Func<System.Collections.Generic.Dictionary<System.String, System.Object>, Task>, Action<Version>)
   type: Constructor
   source:
     remote:
@@ -1717,14 +1683,14 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: .ctor
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 186
+    startLine: 185
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
   summary: "\nCreate an instance of AuthManager\n"
   example: []
   syntax:
-    content: public AuthManager(IDatabase database, int authTokenDurationDays = 90, int resetCodeLength = 6, int resetTokenDurationMinutes = 90, string accountTableName = "account", string accountTableIdFieldName = "id", string accountTableShareCodeFieldName = "share_code", string userTableName = "user", string userTableIdFieldName = "id", string userTableUsernameFieldName = "username", string userTableEmailFieldName = "email", string userTableEmailVerifiedAtFieldName = "email_verified_at", string userTablePhoneFieldName = "phone", string userTablePhoneVerifiedAtFieldName = "phone_verified_at", string userTableSaltFieldName = "salt", string userTablePasswordHashFieldName = "password_hash", string userTableFirstNameFieldName = "first_name", string userTableLastNameFieldName = "last_name", string userTableResetCodeFieldName = "reset_code", string userTableResetCodeExpiresAtFieldName = "reset_code_expires_at", string userTableAccountIdFieldName = "account_id", string userTableRoleFieldName = "role", string defaultRole = null, string sendVerifyTableName = "send_verify", int verifyCodeExpiresSeconds = 3600, string verifyCodeFormat = "###-###", Func<System.Collections.Generic.Dictionary<string, object>, System.Collections.Generic.Dictionary<string, object>> getExtraAccountInfo = null, Func<System.Collections.Generic.Dictionary<string, object>, System.Collections.Generic.Dictionary<string, object>> getExtraUserInfo = null, Func<string, string, Task> onSendEmailVerifyCode = null, Func<string, string, Task> onSendPhoneVerifyCode = null, Func<System.Collections.Generic.Dictionary<string, object>, Task> onVerified = null, Func<System.Collections.Generic.Dictionary<string, object>, Task> onRegisterAccount = null, Func<System.Collections.Generic.Dictionary<string, object>, Task> onRegisterUser = null, Func<System.Collections.Generic.Dictionary<string, object>, Task> onForgotPassword = null, Func<System.Collections.Generic.Dictionary<string, object>, Task> onForgotUsername = null, Action<Version> onCheckVersion = null)
+    content: public AuthManager(IDatabase database, int authTokenDurationDays = 90, int resetCodeLength = 6, int resetTokenDurationMinutes = 90, string resetCodeFormat = "###-###", string accountTableName = "account", string accountTableIdFieldName = "id", string accountTableShareCodeFieldName = "share_code", string userTableName = "user", string userTableIdFieldName = "id", string userTableUsernameFieldName = "username", string userTableEmailFieldName = "email", string userTableEmailVerifiedAtFieldName = "email_verified_at", string userTablePhoneFieldName = "phone", string userTablePhoneVerifiedAtFieldName = "phone_verified_at", string userTableSaltFieldName = "salt", string userTablePasswordHashFieldName = "password_hash", string userTableFirstNameFieldName = "first_name", string userTableLastNameFieldName = "last_name", string userTableResetCodeFieldName = "reset_code", string userTableResetCodeExpiresAtFieldName = "reset_code_expires_at", string userTableAccountIdFieldName = "account_id", string userTableUserRoleFieldName = "user_role", string defaultUserRole = null, string sendVerifyTableName = "send_verify", int verifyCodeExpiresSeconds = 3600, string verifyCodeFormat = "###-###", Func<System.Collections.Generic.Dictionary<string, object>, System.Collections.Generic.Dictionary<string, object>> getExtraAccountInfo = null, Func<System.Collections.Generic.Dictionary<string, object>, System.Collections.Generic.Dictionary<string, object>> getExtraUserInfo = null, Func<string, string, Task> onSendEmailVerifyCode = null, Func<string, string, Task> onSendPhoneVerifyCode = null, Func<System.Collections.Generic.Dictionary<string, object>, Task> onVerified = null, Func<bool, System.Collections.Generic.Dictionary<string, object>, Task> onRegister = null, Func<System.Collections.Generic.Dictionary<string, object>, Task> onForgotPassword = null, Func<System.Collections.Generic.Dictionary<string, object>, Task> onForgotUsername = null, Action<Version> onCheckVersion = null)
     parameters:
     - id: database
       type: Butterfly.Db.IDatabase
@@ -1738,6 +1704,8 @@ items:
     - id: resetTokenDurationMinutes
       type: System.Int32
       description: How long new reset codes are valid for
+    - id: resetCodeFormat
+      type: System.String
     - id: accountTableName
       type: System.String
       description: Table name of the account table (default is &quot;account&quot;)
@@ -1789,10 +1757,10 @@ items:
     - id: userTableAccountIdFieldName
       type: System.String
       description: Field name of the account id field on the user table (default is &quot;account_id&quot;)
-    - id: userTableRoleFieldName
+    - id: userTableUserRoleFieldName
       type: System.String
       description: Field name of the role field on the user table (default is &quot;role&quot;)
-    - id: defaultRole
+    - id: defaultUserRole
       type: System.String
       description: Default value for the role field on a new user
     - id: sendVerifyTableName
@@ -1819,11 +1787,8 @@ items:
     - id: onVerified
       type: Func{System.Collections.Generic.Dictionary{System.String,System.Object},Task}
       description: ''
-    - id: onRegisterAccount
-      type: Func{System.Collections.Generic.Dictionary{System.String,System.Object},Task}
-      description: Callback when a new account is registered
-    - id: onRegisterUser
-      type: Func{System.Collections.Generic.Dictionary{System.String,System.Object},Task}
+    - id: onRegister
+      type: Func{System.Boolean,System.Collections.Generic.Dictionary{System.String,System.Object},Task}
       description: Callback when a new user is registered
     - id: onForgotPassword
       type: Func{System.Collections.Generic.Dictionary{System.String,System.Object},Task}
@@ -1834,15 +1799,15 @@ items:
     - id: onCheckVersion
       type: Action{Version}
       description: ''
-    content.vb: Public Sub New(database As IDatabase, authTokenDurationDays As Integer = 90, resetCodeLength As Integer = 6, resetTokenDurationMinutes As Integer = 90, accountTableName As String = "account", accountTableIdFieldName As String = "id", accountTableShareCodeFieldName As String = "share_code", userTableName As String = "user", userTableIdFieldName As String = "id", userTableUsernameFieldName As String = "username", userTableEmailFieldName As String = "email", userTableEmailVerifiedAtFieldName As String = "email_verified_at", userTablePhoneFieldName As String = "phone", userTablePhoneVerifiedAtFieldName As String = "phone_verified_at", userTableSaltFieldName As String = "salt", userTablePasswordHashFieldName As String = "password_hash", userTableFirstNameFieldName As String = "first_name", userTableLastNameFieldName As String = "last_name", userTableResetCodeFieldName As String = "reset_code", userTableResetCodeExpiresAtFieldName As String = "reset_code_expires_at", userTableAccountIdFieldName As String = "account_id", userTableRoleFieldName As String = "role", defaultRole As String = Nothing, sendVerifyTableName As String = "send_verify", verifyCodeExpiresSeconds As Integer = 3600, verifyCodeFormat As String = "###-###", getExtraAccountInfo As Func(Of System.Collections.Generic.Dictionary(Of String, Object), System.Collections.Generic.Dictionary(Of String, Object)) = Nothing, getExtraUserInfo As Func(Of System.Collections.Generic.Dictionary(Of String, Object), System.Collections.Generic.Dictionary(Of String, Object)) = Nothing, onSendEmailVerifyCode As Func(Of String, String, Task) = Nothing, onSendPhoneVerifyCode As Func(Of String, String, Task) = Nothing, onVerified As Func(Of System.Collections.Generic.Dictionary(Of String, Object), Task) = Nothing, onRegisterAccount As Func(Of System.Collections.Generic.Dictionary(Of String, Object), Task) = Nothing, onRegisterUser As Func(Of System.Collections.Generic.Dictionary(Of String, Object), Task) = Nothing, onForgotPassword As Func(Of System.Collections.Generic.Dictionary(Of String, Object), Task) = Nothing, onForgotUsername As Func(Of System.Collections.Generic.Dictionary(Of String, Object), Task) = Nothing, onCheckVersion As Action(Of Version) = Nothing)
+    content.vb: Public Sub New(database As IDatabase, authTokenDurationDays As Integer = 90, resetCodeLength As Integer = 6, resetTokenDurationMinutes As Integer = 90, resetCodeFormat As String = "###-###", accountTableName As String = "account", accountTableIdFieldName As String = "id", accountTableShareCodeFieldName As String = "share_code", userTableName As String = "user", userTableIdFieldName As String = "id", userTableUsernameFieldName As String = "username", userTableEmailFieldName As String = "email", userTableEmailVerifiedAtFieldName As String = "email_verified_at", userTablePhoneFieldName As String = "phone", userTablePhoneVerifiedAtFieldName As String = "phone_verified_at", userTableSaltFieldName As String = "salt", userTablePasswordHashFieldName As String = "password_hash", userTableFirstNameFieldName As String = "first_name", userTableLastNameFieldName As String = "last_name", userTableResetCodeFieldName As String = "reset_code", userTableResetCodeExpiresAtFieldName As String = "reset_code_expires_at", userTableAccountIdFieldName As String = "account_id", userTableUserRoleFieldName As String = "user_role", defaultUserRole As String = Nothing, sendVerifyTableName As String = "send_verify", verifyCodeExpiresSeconds As Integer = 3600, verifyCodeFormat As String = "###-###", getExtraAccountInfo As Func(Of System.Collections.Generic.Dictionary(Of String, Object), System.Collections.Generic.Dictionary(Of String, Object)) = Nothing, getExtraUserInfo As Func(Of System.Collections.Generic.Dictionary(Of String, Object), System.Collections.Generic.Dictionary(Of String, Object)) = Nothing, onSendEmailVerifyCode As Func(Of String, String, Task) = Nothing, onSendPhoneVerifyCode As Func(Of String, String, Task) = Nothing, onVerified As Func(Of System.Collections.Generic.Dictionary(Of String, Object), Task) = Nothing, onRegister As Func(Of Boolean, System.Collections.Generic.Dictionary(Of String, Object), Task) = Nothing, onForgotPassword As Func(Of System.Collections.Generic.Dictionary(Of String, Object), Task) = Nothing, onForgotUsername As Func(Of System.Collections.Generic.Dictionary(Of String, Object), Task) = Nothing, onCheckVersion As Action(Of Version) = Nothing)
   overload: Butterfly.Auth.AuthManager.#ctor*
-  nameWithType.vb: AuthManager.AuthManager(IDatabase, Int32, Int32, Int32, String, String, String, String, String, String, String, String, String, String, String, String, String, String, String, String, String, String, String, String, Int32, String, Func(Of System.Collections.Generic.Dictionary(Of String, Object), System.Collections.Generic.Dictionary(Of String, Object)), Func(Of System.Collections.Generic.Dictionary(Of String, Object), System.Collections.Generic.Dictionary(Of String, Object)), Func(Of String, String, Task), Func(Of String, String, Task), Func(Of System.Collections.Generic.Dictionary(Of String, Object), Task), Func(Of System.Collections.Generic.Dictionary(Of String, Object), Task), Func(Of System.Collections.Generic.Dictionary(Of String, Object), Task), Func(Of System.Collections.Generic.Dictionary(Of String, Object), Task), Func(Of System.Collections.Generic.Dictionary(Of String, Object), Task), Action(Of Version))
+  nameWithType.vb: AuthManager.AuthManager(IDatabase, Int32, Int32, Int32, String, String, String, String, String, String, String, String, String, String, String, String, String, String, String, String, String, String, String, String, String, Int32, String, Func(Of System.Collections.Generic.Dictionary(Of String, Object), System.Collections.Generic.Dictionary(Of String, Object)), Func(Of System.Collections.Generic.Dictionary(Of String, Object), System.Collections.Generic.Dictionary(Of String, Object)), Func(Of String, String, Task), Func(Of String, String, Task), Func(Of System.Collections.Generic.Dictionary(Of String, Object), Task), Func(Of Boolean, System.Collections.Generic.Dictionary(Of String, Object), Task), Func(Of System.Collections.Generic.Dictionary(Of String, Object), Task), Func(Of System.Collections.Generic.Dictionary(Of String, Object), Task), Action(Of Version))
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: Butterfly.Auth.AuthManager.AuthManager(Butterfly.Db.IDatabase, System.Int32, System.Int32, System.Int32, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.Int32, System.String, Func(Of System.Collections.Generic.Dictionary(Of System.String, System.Object), System.Collections.Generic.Dictionary(Of System.String, System.Object)), Func(Of System.Collections.Generic.Dictionary(Of System.String, System.Object), System.Collections.Generic.Dictionary(Of System.String, System.Object)), Func(Of System.String, System.String, Task), Func(Of System.String, System.String, Task), Func(Of System.Collections.Generic.Dictionary(Of System.String, System.Object), Task), Func(Of System.Collections.Generic.Dictionary(Of System.String, System.Object), Task), Func(Of System.Collections.Generic.Dictionary(Of System.String, System.Object), Task), Func(Of System.Collections.Generic.Dictionary(Of System.String, System.Object), Task), Func(Of System.Collections.Generic.Dictionary(Of System.String, System.Object), Task), Action(Of Version))
-  name.vb: AuthManager(IDatabase, Int32, Int32, Int32, String, String, String, String, String, String, String, String, String, String, String, String, String, String, String, String, String, String, String, String, Int32, String, Func(Of System.Collections.Generic.Dictionary(Of String, Object), System.Collections.Generic.Dictionary(Of String, Object)), Func(Of System.Collections.Generic.Dictionary(Of String, Object), System.Collections.Generic.Dictionary(Of String, Object)), Func(Of String, String, Task), Func(Of String, String, Task), Func(Of System.Collections.Generic.Dictionary(Of String, Object), Task), Func(Of System.Collections.Generic.Dictionary(Of String, Object), Task), Func(Of System.Collections.Generic.Dictionary(Of String, Object), Task), Func(Of System.Collections.Generic.Dictionary(Of String, Object), Task), Func(Of System.Collections.Generic.Dictionary(Of String, Object), Task), Action(Of Version))
+  fullName.vb: Butterfly.Auth.AuthManager.AuthManager(Butterfly.Db.IDatabase, System.Int32, System.Int32, System.Int32, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.Int32, System.String, Func(Of System.Collections.Generic.Dictionary(Of System.String, System.Object), System.Collections.Generic.Dictionary(Of System.String, System.Object)), Func(Of System.Collections.Generic.Dictionary(Of System.String, System.Object), System.Collections.Generic.Dictionary(Of System.String, System.Object)), Func(Of System.String, System.String, Task), Func(Of System.String, System.String, Task), Func(Of System.Collections.Generic.Dictionary(Of System.String, System.Object), Task), Func(Of System.Boolean, System.Collections.Generic.Dictionary(Of System.String, System.Object), Task), Func(Of System.Collections.Generic.Dictionary(Of System.String, System.Object), Task), Func(Of System.Collections.Generic.Dictionary(Of System.String, System.Object), Task), Action(Of Version))
+  name.vb: AuthManager(IDatabase, Int32, Int32, Int32, String, String, String, String, String, String, String, String, String, String, String, String, String, String, String, String, String, String, String, String, String, Int32, String, Func(Of System.Collections.Generic.Dictionary(Of String, Object), System.Collections.Generic.Dictionary(Of String, Object)), Func(Of System.Collections.Generic.Dictionary(Of String, Object), System.Collections.Generic.Dictionary(Of String, Object)), Func(Of String, String, Task), Func(Of String, String, Task), Func(Of System.Collections.Generic.Dictionary(Of String, Object), Task), Func(Of Boolean, System.Collections.Generic.Dictionary(Of String, Object), Task), Func(Of System.Collections.Generic.Dictionary(Of String, Object), Task), Func(Of System.Collections.Generic.Dictionary(Of String, Object), Task), Action(Of Version))
 - uid: Butterfly.Auth.AuthManager.VERSION_CLEAN_REGEX
   commentId: F:Butterfly.Auth.AuthManager.VERSION_CLEAN_REGEX
   id: VERSION_CLEAN_REGEX
@@ -1861,7 +1826,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: VERSION_CLEAN_REGEX
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 297
+    startLine: 295
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -1896,7 +1861,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: SetupWebApi
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 317
+    startLine: 315
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -1936,7 +1901,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: SendVerifyCodeAsync
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 394
+    startLine: 401
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -1971,7 +1936,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: VerifyAsync
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 442
+    startLine: 445
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -2009,7 +1974,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: VerifyAsync
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 498
+    startLine: 501
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -2046,7 +2011,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: Validate
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 511
+    startLine: 514
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -2083,7 +2048,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: RegisterAsync
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 528
+    startLine: 531
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -2128,7 +2093,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: AuthenticateAsync
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 655
+    startLine: 646
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -2170,7 +2135,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: LookupUsernameAsync
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 666
+    startLine: 657
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -2212,7 +2177,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: CreateAnonymousUserAsync
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 679
+    startLine: 670
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -2247,7 +2212,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: CreateUserRefTokenAsync
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 711
+    startLine: 702
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -2286,7 +2251,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: CreateUserRefTokenAsync
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 735
+    startLine: 726
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -2329,7 +2294,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: LoginAsync
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 746
+    startLine: 737
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -2371,7 +2336,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: ForgotPasswordAsync
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 768
+    startLine: 759
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -2410,7 +2375,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: ResetPasswordAsync
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 784
+    startLine: 775
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -2452,7 +2417,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: ForgotUsernameAsync
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 817
+    startLine: 808
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -2491,18 +2456,18 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: CreateResetCodeAsync
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 845
+    startLine: 836
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
   syntax:
-    content: protected Task<string> CreateResetCodeAsync(string userId)
+    content: protected Task<int> CreateResetCodeAsync(string userId)
     parameters:
     - id: userId
       type: System.String
     return:
-      type: Task{System.String}
-    content.vb: Protected Function CreateResetCodeAsync(userId As String) As Task(Of String)
+      type: Task{System.Int32}
+    content.vb: Protected Function CreateResetCodeAsync(userId As String) As Task(Of Integer)
   overload: Butterfly.Auth.AuthManager.CreateResetCodeAsync*
   modifiers.csharp:
   - protected
@@ -2526,7 +2491,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: ConvertInputToDict
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 861
+    startLine: 850
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -2561,7 +2526,7 @@ items:
       repo: https://github.com/firesharkstudios/butterfly-auth.git
     id: GetUserRefToken
     path: ../Butterfly.Auth/AuthManager.cs
-    startLine: 878
+    startLine: 867
   assemblies:
   - Butterfly.Auth
   namespace: Butterfly.Auth
@@ -2999,6 +2964,119 @@ references:
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
+  - uid: System.Collections.Generic.Dictionary`2
+    name: System.Collections.Generic.Dictionary
+    nameWithType: System.Collections.Generic.Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Task
+    name: Task
+    nameWithType: Task
+    fullName: Task
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Func{System.Boolean,System.Collections.Generic.Dictionary{System.String,System.Object},Task}
+  commentId: '!:Func{System.Boolean,System.Collections.Generic.Dictionary{System.String,System.Object},Task}'
+  definition: Func`3
+  name: Func<Boolean, System.Collections.Generic.Dictionary<String, Object>, Task>
+  nameWithType: Func<Boolean, System.Collections.Generic.Dictionary<String, Object>, Task>
+  fullName: Func<System.Boolean, System.Collections.Generic.Dictionary<System.String, System.Object>, Task>
+  nameWithType.vb: Func(Of Boolean, System.Collections.Generic.Dictionary(Of String, Object), Task)
+  fullName.vb: Func(Of System.Boolean, System.Collections.Generic.Dictionary(Of System.String, System.Object), Task)
+  name.vb: Func(Of Boolean, System.Collections.Generic.Dictionary(Of String, Object), Task)
+  spec.csharp:
+  - uid: Func`3
+    name: Func
+    nameWithType: Func
+    fullName: Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Collections.Generic.Dictionary`2
+    name: System.Collections.Generic.Dictionary
+    nameWithType: System.Collections.Generic.Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Task
+    name: Task
+    nameWithType: Task
+    fullName: Task
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Func`3
+    name: Func
+    nameWithType: Func
+    fullName: Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
   - uid: System.Collections.Generic.Dictionary`2
     name: System.Collections.Generic.Dictionary
     nameWithType: System.Collections.Generic.Dictionary
@@ -3683,15 +3761,15 @@ references:
   name: CreateResetCodeAsync
   nameWithType: AuthManager.CreateResetCodeAsync
   fullName: Butterfly.Auth.AuthManager.CreateResetCodeAsync
-- uid: Task{System.String}
-  commentId: '!:Task{System.String}'
+- uid: Task{System.Int32}
+  commentId: '!:Task{System.Int32}'
   definition: Task`1
-  name: Task<String>
-  nameWithType: Task<String>
-  fullName: Task<System.String>
-  nameWithType.vb: Task(Of String)
-  fullName.vb: Task(Of System.String)
-  name.vb: Task(Of String)
+  name: Task<Int32>
+  nameWithType: Task<Int32>
+  fullName: Task<System.Int32>
+  nameWithType.vb: Task(Of Int32)
+  fullName.vb: Task(Of System.Int32)
+  name.vb: Task(Of Int32)
   spec.csharp:
   - uid: Task`1
     name: Task
@@ -3701,10 +3779,10 @@ references:
   - name: <
     nameWithType: <
     fullName: <
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
     isExternal: true
   - name: '>'
     nameWithType: '>'
@@ -3718,10 +3796,10 @@ references:
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
     isExternal: true
   - name: )
     nameWithType: )
